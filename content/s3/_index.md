@@ -5,6 +5,10 @@ draft: false
 weight: 115
 ---
 
+## Introduction
+
+The AWS S3 resource is primarily used to store objects. The service offers scalability, data availability, security, and high performance.
+
 ## Notes from POC
 
 ### Create an AWS Account

@@ -4,30 +4,22 @@ date: 2021-10-01T09:28:27-05:00
 draft: false
 ---
 
-# LaunchCode
+## AWS Basics
 
-You just created a brand new curriculum! Feel free to create new chapters or segments however you normally would. You can also find useful links below that may help inspire.
+This course is an introduction to the AWS Console and AWS CLI.
 
-You pulled in three LaunchCode created github submodules:
-- `layouts`: provides slides shortcode and overwrites menu footer
-- `static`: provides launchcode logo, favicon, and theme variants
-- `archetypes`: provides segment archetype for new chapters
+This course is designed to provide an understanding of some fundamental skills necessary to deploy web applications to a cloud environment.
 
-Example usage of segment:
-```bash
-hugo new --kind segment chapter-name
-```
+### What is this Course
 
-Upon running the above command it will create a new chapter named `chapter-name`
+Learning how to navigate the AWS Console and AWS CLI using the EC2 and S3 resource to deploy static web applications. You will also learn how to connect an EC2 instance to an RDS Datastore for applications that utilize a database.
 
-{{% notice warning %}}
-Replace the content of this entire file with the desired homepage contents of this course!
-{{% /notice %}}
+### Why take this Course
 
-## Helpful Links
+### Where this Course Leads
 
-[LaunchCode Technical Training Github](https://github.com/LaunchCodeTechnicalTraining)
+### Segments / Chapters
 
-[Relearn Documentation](https://mcshelby.github.io/hugo-theme-relearn/)
+{{% children %}}
 
-[Live link to Linux Curriculum](https://launchcodetechnicaltraining.org/linux)
+### Pre-Course Requirements
