@@ -34,11 +34,6 @@ Click on the `Instance ID` to view the summary page for the new EC2 instance.
 
 ![first-static-website summary](pictures/first-static-website-summary.png?classes=border)
 
-### Getting Organized
-
-The objective for this walkthrough is to deploy a static react application to an ec2 instance. Below you will find a list of items needed in order to accomplish this task:
-- `Build artificats of the react project`
-- `Web Server to deploy application`
 
 ### Connect to the Instance
 
@@ -57,3 +52,9 @@ The `Instance ID` and the `Public IP Address` will have different values for you
 {{% /notice %}}
 
 ![ec2 instance connect terminal emulator](pictures/ec2-instance-connect-terminal-emulator.png?classes=border)
+
+### Getting Organized
+
+The objective for this walkthrough is to deploy a static react application to an `EC2 instance`. Below you will find a list of items needed in order to accomplish this task:
+- `Build artificats of the react project`
+- `Web Server to deploy application`
