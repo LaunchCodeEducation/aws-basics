@@ -55,3 +55,5 @@ Within the `EC2 Instance Connect` click on the `Connect` button.
 {{% notice note %}}
 The `Instance ID` and the `Public IP Address` will have different values for you.
 {{% /notice %}}
+
+![ec2 instance connect terminal emulator](pictures/ec2-instance-connect-terminal-emulator.png?classes=border)
