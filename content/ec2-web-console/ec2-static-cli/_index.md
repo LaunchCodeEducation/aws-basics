@@ -2,6 +2,7 @@
 title: "EC2 Static Website CLI Outline"
 date: 2022-05-04T13:45:41-05:00
 draft: false
+hidden: true
 weight: 115
 ---
 
