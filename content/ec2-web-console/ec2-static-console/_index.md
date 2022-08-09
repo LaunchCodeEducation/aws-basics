@@ -121,5 +121,56 @@ This walkthrough will be using Vim to edit files. If you are unfamiliar with Vim
 sudo vim /etc/caddy/Caddyfile
 ```
 
+{{% notice note %}}
+In the above image you will need to replace the ip address `184.72.82.98` with your EC2 Instances IPV4 Public IP Address. The above address is specific to the machine used for this walkthrough.
+{{% /notice %}}
+
+In addition to the above you are also specifying that you will be using `HTTP` because you do not have a DNS attached to the IP address. Since Caddy runs `HTTPS` by default this is a required addition to the file.
+
+You are also pointing to the directory holding the build artifacts for the react project and using the file_server annotation to serve the files.
+
+{{% notice warning %}}
+You will also need to reload your caddy file after the above changes have been made. There are a couple of ways to accomplish this:
+
+While inside the `/etc/caddy/` directory:
+```bash
+sudo caddy reload
+```
+
+From anywhere:
+```bash
+sudo caddy reload --config /etc/caddy/Caddfile
+```
+{{% /notice %}}
+
+### Validation
+
+After completing the above steps you should be able to access the application running on your public IPV4 address while specifying http.
+
+Navigate a new private browser window to `http://your-public-ipv4-address`
+
+![running react application in browser](pictures/react-app-browser.png?classes=border)
+
+#### Troubleshooting
+
+If you are having issues accessing the application in your browser it very well could be a permissions issue. You will find a couple of fixes below that may help you.
+
+1. Run the following commands:
+```bash
+sudo systemctl stop caddy
+```
+
+```bash
+sudo caddy start
+```
+
+Within your `/etc/caddy/` directory:
+```bash
+sudo caddy reload
+```
+{{% notice "green" bonus %}}
+I have found that caddy is started and managed automatically by systemctl and if your project directory is in a location with incorrect permissions this can cause issues. Once you run all the commands as the same user it usually fixes the issues of caddy being able to access the project direcrory.
+{{% /notice %}}
+
 
 
