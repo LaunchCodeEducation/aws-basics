@@ -100,3 +100,26 @@ To verify that you have installed caddy run the following command:
 ```bash
 which caddy
 ```
+
+### Standing up Static React Website
+
+Now that you have a web server installed on your server in addition to the build artifacts you are ready to stand the application up.
+
+The default Caddyfile is located in the following location: `/etc/caddy/Caddfile`.
+
+#### Editing the Caddy Config File
+
+You will need to edit the file as a sudo user and add the following content:
+
+{{% notice note %}}
+This walkthrough will be using Vim to edit files. If you are unfamiliar with Vim you can learn more in our Linux Curriculum located here: `https://launchcodetechnicaltraining.org/linux/userspace-applications/walkthrough/vim/`.
+{{% /notice %}}
+
+![caddy config file ](pictures/caddy-config-file.png?classes=border)
+
+```bash
+sudo vim /etc/caddy/Caddyfile
+```
+
+
+
