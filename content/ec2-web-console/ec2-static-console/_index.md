@@ -63,3 +63,40 @@ The build artifacts for the react project are located within this github reposit
 {{% /notice %}}
 
 2. `Web Server to deploy application`: This walkthrough will utilize `Caddy` as the web server.
+
+
+### Clone the Build Artifacts
+
+Run the following command:
+
+![react-tic-tac-toe build artifacts](pictures/react-build-artifacts.png?classes=border)
+
+```bash
+git clone https://github.com/LaunchCodeTechnicalTraining/react-tic-tac-toe-build-artifacts.git
+```
+
+### Caddy Installation
+
+```bash
+sudo apt update -y
+
+sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
+
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+
+sudo apt update -y
+
+sudo apt install caddy -y
+```
+
+#### Caddy Install Validation
+
+To verify that you have installed caddy run the following command:
+
+![verify caddy installation](pictures/which-caddy.png?classes=border)
+
+```bash
+which caddy
+```
