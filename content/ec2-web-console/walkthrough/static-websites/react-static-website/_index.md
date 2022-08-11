@@ -1,11 +1,11 @@
 ---
-title: "EC2 Static Website Console"
+title: "React Static Website"
 date: 2022-05-04T13:45:41-05:00
 draft: false
-weight: 110
+weight: 100
 ---
 
-## AWS EC2 Static Website Console
+## AWS EC2 React Static Website
 
 Now you are ready to deploy a static website to a brand new EC2 instance. Let's begin by creating a brand new EC2. Below you will find the appropriate settings for this walkthrough.
 
@@ -55,7 +55,7 @@ The `Instance ID` and the `Public IP Address` will have different values for you
 
 ### Getting Organized
 
-The objective for this walkthrough is to deploy a static react application to an `EC2 instance`. Below you will find a list of items needed in order to accomplish this task:
+The objective for this walkthrough is to deploy a static `React` application to an `EC2 instance`. Below you will find a list of items needed in order to accomplish this task:
 1. `Build artificats of the react project`
 
 {{% notice note %}}
