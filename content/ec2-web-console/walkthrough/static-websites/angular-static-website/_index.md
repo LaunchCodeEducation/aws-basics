@@ -109,17 +109,24 @@ The default Caddyfile is located in the following location: `/etc/caddy/Caddfile
 
 #### Editing the Caddy Config File
 
-You will need to edit the file as a sudo user and add the following content:
 
 {{% notice note %}}
 This walkthrough will be using Vim to edit files. If you are unfamiliar with Vim you can learn more in our Linux Curriculum located here: `https://launchcodetechnicaltraining.org/linux/userspace-applications/walkthrough/vim/`.
 {{% /notice %}}
 
-![caddy config file for angular static website ](pictures/caddy-config-file-angular.png?classes=border)
+{{% notice "green" Bonus %}}
+The default Caddyfile will already have text inside. You should see the file with the following information:
+![default caddyfile text](pictures/default-caddyfile-view.png?classes=border)
+Feel free to remove all of the information inside of this file. It is simply there as an example.
+{{% /notice %}}
+
+You will need to edit the file as a sudo user and add the following content:
 
 ```bash
 sudo vim /etc/caddy/Caddyfile
 ```
+
+![caddy config file for angular static website ](pictures/caddy-config-file-angular.png?classes=border)
 
 {{% notice note %}}
 In the above image you will need to replace the ip address `18.206.162.35` with your EC2 Instances IPV4 Public IP Address. The above address is specific to the machine used for this walkthrough.
