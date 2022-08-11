@@ -56,10 +56,10 @@ The `Instance ID` and the `Public IP Address` will have different values for you
 ### Getting Organized
 
 The objective for this walkthrough is to deploy a static `Angular` application to an `EC2 instance`. Below you will find a list of items needed in order to accomplish this task:
-1. `Build artificats of the react project`
+1. `Build artificats of the Angular project`
 
 {{% notice note %}}
-The build artifacts for the react project are located within this github repository: `https://github.com/LaunchCodeTechnicalTraining/orbit-report-artifacts`
+The build artifacts for the Angular project are located within this github repository: `https://github.com/LaunchCodeTechnicalTraining/orbit-report-artifacts`
 {{% /notice %}}
 
 2. `Web Server to deploy application`: This walkthrough will utilize `Caddy` as the web server.
@@ -69,10 +69,10 @@ The build artifacts for the react project are located within this github reposit
 
 Run the following command:
 
-![react-tic-tac-toe build artifacts](pictures/react-build-artifacts.png?classes=border)
+![angular orbit report artifacts](pictures/orbit-report-artifacts.png?classes=border)
 
 ```bash
-git clone https://github.com/LaunchCodeTechnicalTraining/react-tic-tac-toe-build-artifacts.git
+git clone https://github.com/LaunchCodeTechnicalTraining/orbit-report-artifacts
 ```
 
 ### Caddy Installation
@@ -101,7 +101,7 @@ To verify that you have installed caddy run the following command:
 which caddy
 ```
 
-### Standing up Static React Website
+### Standing up Static Angular Website
 
 Now that you have a web server installed on your server in addition to the build artifacts you are ready to stand the application up.
 
@@ -115,19 +115,19 @@ You will need to edit the file as a sudo user and add the following content:
 This walkthrough will be using Vim to edit files. If you are unfamiliar with Vim you can learn more in our Linux Curriculum located here: `https://launchcodetechnicaltraining.org/linux/userspace-applications/walkthrough/vim/`.
 {{% /notice %}}
 
-![caddy config file ](pictures/caddy-config-file.png?classes=border)
+![caddy config file for angular static website ](pictures/caddy-config-file-angular.png?classes=border)
 
 ```bash
 sudo vim /etc/caddy/Caddyfile
 ```
 
 {{% notice note %}}
-In the above image you will need to replace the ip address `184.72.82.98` with your EC2 Instances IPV4 Public IP Address. The above address is specific to the machine used for this walkthrough.
+In the above image you will need to replace the ip address `18.206.162.35` with your EC2 Instances IPV4 Public IP Address. The above address is specific to the machine used for this walkthrough.
 {{% /notice %}}
 
 In addition to the above you are also specifying that you will be using `HTTP` because you do not have a DNS attached to the IP address. Since Caddy runs `HTTPS` by default this is a required addition to the file.
 
-You are also pointing to the directory holding the build artifacts for the react project and using the file_server annotation to serve the files.
+You are also pointing to the directory holding the build artifacts for the Angular project and using the file_server annotation to serve the files.
 
 {{% notice warning %}}
 You will also need to reload your caddy file after the above changes have been made. There are a couple of ways to accomplish this:
@@ -139,7 +139,7 @@ sudo caddy reload
 
 From anywhere:
 ```bash
-sudo caddy reload --config /etc/caddy/Caddfile
+sudo caddy reload --config /etc/caddy/Caddyfile
 ```
 {{% /notice %}}
 
@@ -149,7 +149,7 @@ After completing the above steps you should be able to access the application ru
 
 Navigate a new private browser window to `http://your-public-ipv4-address`
 
-![running react application in browser](pictures/react-app-browser.png?classes=border)
+![running angular application in browser](pictures/angular-app-browser.png?classes=border)
 
 #### Troubleshooting
 

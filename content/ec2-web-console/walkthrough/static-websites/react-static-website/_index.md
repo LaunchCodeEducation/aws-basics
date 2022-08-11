@@ -56,7 +56,7 @@ The `Instance ID` and the `Public IP Address` will have different values for you
 ### Getting Organized
 
 The objective for this walkthrough is to deploy a static `React` application to an `EC2 instance`. Below you will find a list of items needed in order to accomplish this task:
-1. `Build artificats of the react project`
+1. `Build artificats of the React project`
 
 {{% notice note %}}
 The build artifacts for the react project are located within this github repository: `https://github.com/LaunchCodeTechnicalTraining/react-tic-tac-toe-build-artifacts.git`
