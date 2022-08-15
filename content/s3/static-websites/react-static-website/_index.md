@@ -85,3 +85,26 @@ Scroll down within this view until you reach the `Static Website Hosting` proper
 ![Static Website Hosting Option](pictures/static-website-hosting.png?classes=border)
 
 Click on the `Edit` button.
+
+![Edit Static Website Hosting View](pictures/edit-static-website-hosting.png?classes=border)
+
+Click on the `Enable` option.
+
+This will open up a new menu with the following options:
+
+- `Hosting Type`: For this walkthrough you will be selecting `Host a static website` as the option.
+- `Index Document`: The Index Document you will be using is `index.html` as seen earlier in this walkthrough.
+- `Error Document`: This option you will leave as defaulted.
+- `Redirection Rules`: This option you will leave as defaulted.
+
+![Edit Static Website Hosting Expanded View](pictures/edit-static-website-expanded.png?classes=border)
+
+After you have selected and filled in the correct values scroll to the bottom of the page and click the `Save Changes` button.
+
+### Validation
+
+After saving the above changes you should be able to scroll to the bottom of your `Properties` tab and see the changes reflected under the `Static Website Hosting` option.
+
+![Static Website Hosting Options Saved](pictures/static-website-hosting-validation.png?classes=border)
+
+You can also now see the endpoint for your static website. In the above screenshot the bucket endpoint is `http://my-first-bucket-john.s3-website-us-east-1.amazonaws.com`
