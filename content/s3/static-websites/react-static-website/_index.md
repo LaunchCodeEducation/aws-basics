@@ -9,6 +9,10 @@ weight: 100
 
 ### Uploading Content
 
+{{% notice note %}}
+This walkthrough will be using the bucket you created during the `First S3 Bucket` and `Accessing Your S3 Bucket` walkthroughs.
+{{% /notice %}}
+
 In order to host a static website you will need to upload the folder containing the build artifacts for the application.
 
 {{% notice note %}}
@@ -50,3 +54,34 @@ You should see that the `react-tic-tac-toe-build-artifacts` is located within th
 ![Content Successfully uploaded](pictures/first-bucket-view-with-content.png?classes=border)
 
 Click on the `react-tic-tac-toe-build-artifacts` folder to take a look at what is inside.
+
+![React Build Artifacts Folder Contents](pictures/react-artifacts-folder-contents.png?classes=border)
+
+You should see that within the directory is the following:
+- `.git/` folder
+- `asset-manifest.json`
+- `favicon.ico`
+- `index.html`
+- `logo192.png`
+- `logo512.png`
+- `manifest.json`
+- `robots.txt`
+- `static` folder
+
+All of the above files are a result of building a `React` project and taking what was inside of the `build` folder and storing them as build artifacts.
+
+### Enable Static Website Hosting
+
+Now that you have had a look at what is inside of the folder you will need to enable the option for Static Website Hosting within this bucket.
+
+Navigate back to the main dashboard of your bucket and click the on `Properties` tab.
+
+There are a lot of different properties within this tab. You are looking for the `Static Website Hosting` property.
+
+![Properties Tab View](pictures/properties-tab-view.png?classes=border)
+
+Scroll down within this view until you reach the `Static Website Hosting` property option.
+
+![Static Website Hosting Option](pictures/static-website-hosting.png?classes=border)
+
+Click on the `Edit` button.
