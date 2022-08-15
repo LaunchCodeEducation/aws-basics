@@ -8,3 +8,9 @@ weight: 105
 ## Accessing Your New S3 Bucket
 
 Now that you have created an S3 Bucket you will want to access the resource.
+
+Navigate to the Amazon S3 Dashboard to view your existing buckets.
+
+![Amazon S3 Dashboard Overview](pictures/existing-buckets-view.png?classes=border)
+
+![First Bucket Dashboard](pictures/first-bucket-view.png?classes=border)
