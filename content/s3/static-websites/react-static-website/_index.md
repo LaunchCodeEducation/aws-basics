@@ -27,46 +27,29 @@ Once you have cloned the build artifacts click on the `Upload` button within the
 
 ### Upload Content View
 
-In this walkthrough you will be uploading the cloned folder containing the build artifacts.
-
-Click on the `Add Folder` button.
+You will be uploading the build artifacts that you cloned earlier in this walkthrough.
 
 ![Upload Content View](pictures/upload-view.png?classes=border)
 
-{{% notice note %}}
-Once you click on the `Add Folder` button you will need to navigate your file explorer to the location containing your cloned directory. After you have selected the proper directory you will see that the `Files and folders` section has been populated with that directories cotent.
+{{% notice "green" Bonus %}}
+There are multiple ways that you can upload the build artifacts to this S3 bucket. I simply selected all files within the `react-tic-tac-toe-build-artifacts` folder to drag and drop them inside.
 {{% /notice %}}
 
 ![Uploaded Files View](pictures/uploaded-files-view.png?classes=border)
 
-Once you have added the folder to be uploaded, scroll to the bottom of the page and click the `Upload` button.
+Once you have added the files to be uploaded, scroll to the bottom of the page and click the `Upload` button.
 
 ### Validation
 
-Upon uploading the folder to your `S3` bucket you should see a notification that lets you know the upload was successful.
+Upon uploading the build artifacts to your `S3` bucket you should see a notification that lets you know the upload was successful.
 
 ![Uploaded React Build Artifacts Complete](pictures/upload-react-artifacts.png?classes=border)
 
 Click on the `Close` button located near the top right corner of your screen. This will take you back to your bucket dashboard.
 
-You should see that the `react-tic-tac-toe-build-artifacts` is located within the `Objects` tab of your bucket.
+You should see that the build artifacts are located within the `Objects` tab of your bucket.
 
 ![Content Successfully uploaded](pictures/first-bucket-view-with-content.png?classes=border)
-
-Click on the `react-tic-tac-toe-build-artifacts` folder to take a look at what is inside.
-
-![React Build Artifacts Folder Contents](pictures/react-artifacts-folder-contents.png?classes=border)
-
-You should see that within the directory is the following:
-- `.git/` folder
-- `asset-manifest.json`
-- `favicon.ico`
-- `index.html`
-- `logo192.png`
-- `logo512.png`
-- `manifest.json`
-- `robots.txt`
-- `static` folder
 
 All of the above files are a result of building a `React` project and taking what was inside of the `build` folder and storing them as build artifacts.
 
@@ -107,4 +90,13 @@ After saving the above changes you should be able to scroll to the bottom of you
 
 ![Static Website Hosting Options Saved](pictures/static-website-hosting-validation.png?classes=border)
 
-You can also now see the endpoint for your static website. In the above screenshot the bucket endpoint is `http://my-first-bucket-john.s3-website-us-east-1.amazonaws.com`
+You can also now see the endpoint for your static website. In the above screenshot the bucket endpoint is:
+- `http://my-first-bucket-john.s3-website-us-east-1.amazonaws.com`
+
+If you click on the link your browser should open up a new window with a working react static website.
+
+![Working React Static S3 Website](pictures/react-website-in-browser.png?classes=border)
+
+{{% notice note %}}
+This link is publicly available to anyone. Feel free to share the link!
+{{% /notice %}}
