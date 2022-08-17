@@ -7,25 +7,40 @@ weight: 105
 
 ## Angular S3 Static Website Walkthrough
 
-### Uploading Content
+### Getting Organized
+
+Begin by creating a new S3 Bucket with the following settings:
+- `Bucket Name`: orbit-report-static-s3-[insert random number]
+- `AWS Region`: default region
+- `Object Ownership`: ACLs disabled
+- `Public Access Settings`: All Public Access Allowed
+- `Bucket Versioning`: Disable
+- `Tags`: None
+- `Default Encryption`: Disable
+- `Advanced Settings`: None
+
+Once you have the above settings correct click the `Create bucket` button.
+
+![Angular Static Website Bucket Created](pictures/orbit-report-static-s3-1.png?classes=border)
+
+Click on the name of your newly created bucket to view its dashboard.
+
+### Cloning Build Artifacts
+
+In order to host a static website you will need to upload the build artifacts for the application.
 
 {{% notice note %}}
-This walkthrough will be using the bucket you created during the `First S3 Bucket` and `Accessing Your S3 Bucket` walkthroughs.
-{{% /notice %}}
-
-In order to host a static website you will need to upload the folder containing the build artifacts for the application.
-
-{{% notice note %}}
-The build artifacts you will be using for this static website are located within this github repository: `https://github.com/LaunchCodeTechnicalTraining/react-tic-tac-toe-build-artifacts`
+The build artifacts you will be using for this static website are located within this github repository: `https://github.com/LaunchCodeTechnicalTraining/orbit-report-artifacts`
 {{% /notice %}}
 
 You will need to clone the above build artifacts to your machine so that you can upload them to your newly created bucket.
 
+
+### Uploading Build Artifacts
+
 Once you have cloned the build artifacts click on the `Upload` button within the console.
 
-![My First Bucket View](pictures/first-bucket-view.png?classes=border)
-
-### Upload Content View
+![Upload Button On New Bucket](pictures/orbit-report-static-s3-dashboard.png?classes=border)
 
 You will be uploading the build artifacts that you cloned earlier in this walkthrough.
 
