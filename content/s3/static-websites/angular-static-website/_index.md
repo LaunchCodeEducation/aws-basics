@@ -44,29 +44,27 @@ Once you have cloned the build artifacts click on the `Upload` button within the
 
 You will be uploading the build artifacts that you cloned earlier in this walkthrough.
 
-![Upload Content View](pictures/upload-view.png?classes=border)
+![Upload Angular Build Artifacts View](pictures/upload-build-artifacts.png?classes=border)
 
 {{% notice "green" Bonus %}}
-There are multiple ways that you can upload the build artifacts to this S3 bucket. I simply selected all files within the `react-tic-tac-toe-build-artifacts` folder to drag and drop them inside.
+There are multiple ways that you can upload the build artifacts to this S3 bucket. I simply selected all files within the `orbit-report-artifacts` folder to drag and drop them inside.
 {{% /notice %}}
 
-![Uploaded Files View](pictures/uploaded-files-view.png?classes=border)
-
 Once you have added the files to be uploaded, scroll to the bottom of the page and click the `Upload` button.
+
+![Uploaded Files View](pictures/uploaded-files-view.png?classes=border)
 
 ### Validation
 
 Upon uploading the build artifacts to your `S3` bucket you should see a notification that lets you know the upload was successful.
 
-![Uploaded React Build Artifacts Complete](pictures/upload-react-artifacts.png?classes=border)
-
 Click on the `Close` button located near the top right corner of your screen. This will take you back to your bucket dashboard.
 
 You should see that the build artifacts are located within the `Objects` tab of your bucket.
 
-![Content Successfully uploaded](pictures/first-bucket-view-with-content.png?classes=border)
+![Content Successfully uploaded](pictures/orbit-report-bucket-with-content.png?classes=border)
 
-All of the above files are a result of building a `React` project and taking what was inside of the `build` folder and storing them as build artifacts.
+All of the files you uploaded are a result of building an `Angular` project and taking what was inside of the `build` folder and storing them as build artifacts.
 
 ### Enable Static Website Hosting
 
@@ -75,8 +73,6 @@ Now that you have had a look at what is inside of the folder you will need to en
 Navigate back to the main dashboard of your bucket and click the on `Properties` tab.
 
 There are a lot of different properties within this tab. You are looking for the `Static Website Hosting` property.
-
-![Properties Tab View](pictures/properties-tab-view.png?classes=border)
 
 Scroll down within this view until you reach the `Static Website Hosting` property option.
 
