@@ -104,9 +104,11 @@ After saving the above changes you should be able to scroll to the bottom of you
 You can also now see the endpoint for your static website. In the above screenshot the bucket endpoint is:
 - `http://my-first-bucket-john.s3-website-us-east-1.amazonaws.com`
 
-If you click on the link your browser should open up a new window with a working react static website.
+If you click on the link your browser should open up a new window. You will most likely receive the following error on that new page:
 
-![Working React Static S3 Website](pictures/react-website-in-browser.png?classes=border)
+![403 forbidden whitepage](pictures/403-forbidden-whitepage.png?classes=border)
+
+This is there is no bucket policy attached to the `orbit-report-bucket`. You will need to attach a new bucket policy to this bucket in order to make the objects available to the public.
 
 {{% notice note %}}
 This link is publicly available to anyone. Feel free to share the link!
