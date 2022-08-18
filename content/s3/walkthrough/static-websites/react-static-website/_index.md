@@ -104,7 +104,7 @@ After saving the above changes, scroll to the bottom of your `Properties` tab an
 You can also now see the endpoint for your static website. In the above screenshot the bucket endpoint is:
 - `http://react-tic-tac-toe-1.s3-website-us-east-1.amazonaws.com`
 
-If you click on the link your browser should open up a new window. You will most likely receive the following error on that new page:
+If you click on the link, your browser should open up a new window. You will most likely receive the following error on that new page:
 
 ![403 forbidden whitepage](pictures/403-forbidden-whitepage.png?classes=border)
 
