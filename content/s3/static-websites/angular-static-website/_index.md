@@ -74,7 +74,7 @@ Navigate back to the main dashboard of your bucket and click the on `Properties`
 
 There are a lot of different properties within this tab. You are looking for the `Static Website Hosting` property.
 
-Scroll down within this view until you reach the `Static Website Hosting` property option.
+Scroll down within this view until you reach the `Static Website Hosting` section.
 
 ![Static Website Hosting Option](pictures/static-website-hosting.png?classes=border)
 
@@ -87,7 +87,7 @@ Click on the `Enable` option.
 This will open up a new menu with the following options:
 
 - `Hosting Type`: For this walkthrough you will be selecting `Host a static website` as the option.
-- `Index Document`: The Index Document you will be using is `index.html` as seen earlier in this walkthrough.
+- `Index Document`: The Index Document you will be using is `index.html` that you uploaded earlier in this walkthrough.
 - `Error Document`: This option you will leave as defaulted.
 - `Redirection Rules`: This option you will leave as defaulted.
 
@@ -97,7 +97,7 @@ After you have selected and filled in the correct values scroll to the bottom of
 
 ### Validation
 
-After saving the above changes you should be able to scroll to the bottom of your `Properties` tab and see the changes reflected under the `Static Website Hosting` option.
+After saving the above changes you should be able to scroll to the bottom of your `Properties` tab and see the changes reflected under `Static Website Hosting`.
 
 ![Static Website Hosting Options Saved](pictures/static-website-hosting-validation.png?classes=border)
 
@@ -109,6 +109,57 @@ If you click on the link your browser should open up a new window. You will most
 ![403 forbidden whitepage](pictures/403-forbidden-whitepage.png?classes=border)
 
 This is there is no bucket policy attached to the `orbit-report-bucket`. You will need to attach a new bucket policy to this bucket in order to make the objects available to the public.
+
+### Attaching Bucket Policy
+
+Open up the `Permissions` tab within your S3 Bucket.
+
+Navigate the permissions view until you come accross the `Bucket Policy` section as shown below:
+
+![Permissions Tab of S3 Bucket](pictures/permissions-tab.png?classes=border)
+
+Click on the `Edit` button.
+
+This will open up a new view so that you are able to attach a policy to the bucket.
+
+You will be using the bucket policy provided in this article: [AWS S3 Security Permissions Document](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteAccessPermissionsReqd.html)
+
+You can find the raw json below:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::Bucket-Name/*"
+            ]
+        }
+    ]
+}
+```
+
+Add the above `Policy` to the empty field as shown in the screenshot below, replacing `Bucket-Name` with the name of your bucket:
+
+![Public Bucket Polcy S3 Bucket](pictures/attach-bucket-policy.png?classes=border)
+
+{{% notice warning %}}
+You will need to add the name of your bucket under the "Resource" section in order for the policy to work. Without a valid bucket name you will most likely receive an error if you try to save changes.
+{{% /notice %}}
+
+Click on the `Save changes` button.
+
+### Validation
+
+Now that you have attached a `Policy` to your bucket you should now be able to access your static website using the link found under the `Static Website` section under your `Properties` tab!
+
+![Working Angular Static Website](pictures/angular-static-website-view.png?classes=border)
 
 {{% notice note %}}
 This link is publicly available to anyone. Feel free to share the link!
