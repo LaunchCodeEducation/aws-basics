@@ -19,13 +19,13 @@ For your first bucket you will only need to provide a unique name and leave all 
 
 ![first-bucket-view](pictures/first-bucket-view.png?classes=border)
 
-The name I used  while creating the bucket is "my-first-bucket-john".
+The name I used  while creating the bucket is `my-first-bucket-john`.
 
 ### Public Access
 
-![public-access-versioning](pictures/public-access-versioning.png?classes=border)
+![allow-public-access-s3](pictures/allow-public-access-s3.png?classes=border)
 
-Leave the public access and versioning  options as the default.
+For the following walkthroughs, you will need public access to be enabled for the S3 buckets. Public access cannot be blocked if the goal is to host a static website.
 
 ### Tags
 

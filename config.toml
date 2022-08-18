@@ -1,7 +1,9 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://lctt-aws-basics.netlify.app'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'AWS Basics'
 theme = "hugo-theme-relearn"
+
+canonifyURLs = true
 
 [params]
   themeVariant = ["lc-light", "lc-dark-blue", "lc-dark-blue-two"]
