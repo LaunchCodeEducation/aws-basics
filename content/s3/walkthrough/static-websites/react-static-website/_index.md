@@ -97,7 +97,7 @@ After you have selected and filled in the correct values, scroll to the bottom o
 
 ### Validation
 
-After saving the above changes you should be able to scroll to the bottom of your `Properties` tab and see the changes reflected under `Static Website Hosting`.
+After saving the above changes, scroll to the bottom of your `Properties` tab and see the changes reflected under `Static Website Hosting`.
 
 ![Static Website Hosting Options Saved](pictures/static-website-hosting-validation.png?classes=border)
 
