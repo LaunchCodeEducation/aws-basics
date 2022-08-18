@@ -35,4 +35,4 @@ Once you are viewing your newly created bucket, you will notice there are multip
 
 ![First Bucket Dashboard](pictures/first-bucket-view.png?classes=border)
 
-Now that you have a general understanding of how and where to access your bucket you are now ready to add a folder containing the build artifacts for a static website.
+Now that you have a general understanding of how and where to access your bucket, you are ready to add a folder containing the build artifacts for a static website.
