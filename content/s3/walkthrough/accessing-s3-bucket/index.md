@@ -24,7 +24,7 @@ This AWS Account also has an already existing bucket named `launchcode-blog-imag
 
 ### Individual Bucket Dashboard
 
-Once you are viewing your newly created bucket you will notice there are multiple tabs available.
+Once you are viewing your newly created bucket, you will notice there are multiple tabs available.
 
 - `Objects`: View for all existing objects within the bucket
 - `Properties`: Various settings available for the bucket
