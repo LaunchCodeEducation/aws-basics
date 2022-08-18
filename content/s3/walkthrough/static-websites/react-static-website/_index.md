@@ -157,7 +157,7 @@ Click on the `Save changes` button.
 
 ### Validation
 
-Now that you have attached a `Policy` to your bucket you should now be able to access your static website using the link found under the `Static Website` section under your `Properties` tab!
+Now that you have attached a `Policy` to your bucket, you should be able to access your static website using the link found under the `Static Website` section under your `Properties` tab!
 
 ![Working React Static Website](pictures/react-static-website-view.png?classes=border)
 
