@@ -7,7 +7,7 @@ weight: 105
 
 ## Accessing Your New S3 Bucket
 
-Now that you have created an S3 Bucket you will want to access the resource.
+Now that you have created an S3 Bucket, you will want to access the resource.
 
 
 ### S3 Bucket Dashboard
