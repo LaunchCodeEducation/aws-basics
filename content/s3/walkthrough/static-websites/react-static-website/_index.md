@@ -93,7 +93,7 @@ This will open up a new menu with the following options:
 
 ![Edit Static Website Hosting Expanded View](pictures/edit-static-website-expanded.png?classes=border)
 
-After you have selected and filled in the correct values scroll to the bottom of the page and click the `Save Changes` button.
+After you have selected and filled in the correct values, scroll to the bottom of the page and click the `Save Changes` button.
 
 ### Validation
 
