@@ -19,7 +19,7 @@ Begin by creating a new S3 Bucket with the following settings:
 - `Default Encryption`: Disable
 - `Advanced Settings`: None
 
-Once you have the above settings correct click the `Create bucket` button.
+Once you have the above settings correct, click the `Create bucket` button.
 
 ![Angular Static Website Bucket Created](pictures/orbit-report-static-s3-1.png?classes=border)
 
