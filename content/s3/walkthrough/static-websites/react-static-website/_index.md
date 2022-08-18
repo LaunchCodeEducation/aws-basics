@@ -68,7 +68,7 @@ All of the files you uploaded are a result of building a `React` project and tak
 
 ### Enable Static Website Hosting
 
-Now that you have had a look at what is inside of the folder you will need to enable the option for Static Website Hosting within this bucket.
+Now that you have had a look at what is inside the folder, you will need to enable the option for Static Website Hosting within this bucket.
 
 Navigate back to the main dashboard of your bucket and click the on `Properties` tab.
 
