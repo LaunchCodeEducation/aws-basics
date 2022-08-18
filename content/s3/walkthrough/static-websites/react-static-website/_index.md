@@ -47,7 +47,7 @@ You will be uploading the build artifacts that you cloned earlier in this walkth
 ![Upload React Build Artifacts View](pictures/upload-build-artifacts.png?classes=border)
 
 {{% notice "green" Bonus %}}
-There are multiple ways that you can upload the build artifacts to this S3 bucket. I simply selected all files within the `orbit-report-artifacts` folder to drag and drop them inside.
+There are multiple ways that you can upload the build artifacts to this S3 bucket. I simply selected all files within the `react-tic-tac-toe-build-artifacts` folder to drag and drop them inside.
 {{% /notice %}}
 
 Once you have added the files to be uploaded, scroll to the bottom of the page and click the `Upload` button.
@@ -102,13 +102,13 @@ After saving the above changes you should be able to scroll to the bottom of you
 ![Static Website Hosting Options Saved](pictures/static-website-hosting-validation.png?classes=border)
 
 You can also now see the endpoint for your static website. In the above screenshot the bucket endpoint is:
-- `http://my-first-bucket-john.s3-website-us-east-1.amazonaws.com`
+- `http://react-tic-tac-toe-1.s3-website-us-east-1.amazonaws.com`
 
 If you click on the link your browser should open up a new window. You will most likely receive the following error on that new page:
 
 ![403 forbidden whitepage](pictures/403-forbidden-whitepage.png?classes=border)
 
-This is there is no bucket policy attached to the `orbit-report-bucket`. You will need to attach a new bucket policy to this bucket in order to make the objects available to the public.
+This is there is no bucket policy attached to the `react-tic-tac-toe` bucket. You will need to attach a new bucket policy to this bucket in order to make the objects available to the public.
 
 ### Attaching Bucket Policy
 
