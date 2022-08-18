@@ -25,7 +25,7 @@ The name I used  while creating the bucket is `my-first-bucket-john`.
 
 ![allow-public-access-s3](pictures/allow-public-access-s3.png?classes=border)
 
-For the following walkthroughs you will need public access to be enabled for the s3 buckets. The goal is to host a static webiste and you will notice in order to do so public access cannot be blocked.
+For the following walkthroughs, you will need public access to be enabled for the S3 buckets. Public access cannot be blocked if the goal is to host a static website.
 
 ### Tags
 
