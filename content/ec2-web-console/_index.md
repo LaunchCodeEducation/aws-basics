@@ -5,21 +5,22 @@ draft: false
 weight: 105
 ---
 
-## Notes for EC2 Console
+## Intro to Amazon Elastic Compute Cloud (Amazon EC2)
 
-One EC2 - needs access to internet
+Amazon `EC2` is one of Amazon's many Web Services. One of the great benefits of the `EC2` service is that you are able to create a virtual server within the cloud extremely fast. 
 
-ipv4 CIDR block is for internal network:
-- 10.0.0.0/16 - transient default
-Availability zones:
-- where does the project live?
-Public subnet:
-- need at least 1
-Number of private subnets:
-- could say 0 and only use public, this means there is no internal network connecting resources
-- resources that dont need to be public should not be public
-- architecture - 1 ec2
-ssh 0 instead of anywhere whitelisted for only my ip address
+The `EC2` service is commonly referred to as secure, scalable, and reliable.
+
+Dependant upon the requirements for your application, any `Virtual Server` you create within the `EC2` service is customizable with various `Instance Types`, `Network Settings`, and `Storage`. 
+
+Some of these settings are slightly out of scope for what we are trying to accomplish with this course. We will be utilizing the `free` tier eligible options so that you do not accrue larger amounts of cost when using `AWS`.
+
+This course will utilize the `EC2` service for the following:
+- Deploying Static Websites to Virtual `Linux` Server's
+- Deploying Persistent Web Applications to a Virtual `Linux` Server connected to a private `RDS Database`
+
+
+
 
 
 ## Content Links
