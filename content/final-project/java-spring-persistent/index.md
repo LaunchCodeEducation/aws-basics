@@ -33,7 +33,34 @@ Build artifacts for this deployment:
 
 #### Environment Variables
 
-#### Docker
+#### Docker Installation
+
+In order to keep everything inside of our virtual-server you will be utilizing `Docker` to run a `MySQL` container. 
+
+This allows us to create a `MySQL` container inside of our virtual-server and configure it's settings so that our `Java` application is able to connect to it.
+
+{{% notice note %}}
+docker is an extremely useful tool and can be utilized in many different ways. To cover its entire purpose and numerous use cases is outside of the scope of this class. 
+
+If you would like to continue reading and learn more about `docker` you can find the documentation here:
+[docker docs](https://docs.docker.com/)
+{{% /notice %}}
+
+```bash
+sudo apt update -y
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update -y
+
+apt-cache policy docker-ce
+
+sudo apt install docker-ce
+```
 
 #### Running Application
 
