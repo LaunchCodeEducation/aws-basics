@@ -13,6 +13,11 @@ Now that you have worked closely with the EC2 and S3 service it is time to take 
 What needs to happen for the Java/Spring Persistent web application to be deployed?
 
 #### EC2 Instance Created
+1. `Name of Instance`
+1. `AMI`
+1. `Instance Type`
+1. `Key Pair`
+1. `Security Group`
 
 #### Machine State
 1. `git` must be installed
