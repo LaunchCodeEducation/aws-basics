@@ -31,7 +31,20 @@ Build artifacts for this deployment:
 #### Web Server Configured
 `caddy`, `nginx`, or some other web server must be configured to catch `HTTP` requests and respond as a `reverse_proxy` to our running application.
 
+{{% notice "green" Bonus %}}
+You can find Installation steps for both `caddy` and `nginx` here:
+- [Caddy Installation](https://launchcodetechnicaltraining.org/linux/web-server/caddy/setup/)
+- [Nginx Installation](https://launchcodetechnicaltraining.org/linux/web-server/nginx/setup/)
+{{% /notice %}}
+
 #### Environment Variables
+
+This application was created using environment variables in order to connect to the `MySQL` database. 
+
+This was done for multiple reasons:
+1. `Security`
+1. `Ease of use`
+1. `Ability to change database settings`
 
 #### Docker Installation
 
@@ -63,6 +76,10 @@ sudo apt install docker-ce
 ```
 
 #### Running Application
+
+After completing the above steps you should be able to open your browser to the `public-ipv4` address of your `EC2` instance to view the running application.
+
+![Running Java Techjobs Persistent Application](pictures/running-techjobs-application.png?classes=border)
 
 
 
