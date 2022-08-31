@@ -7,24 +7,32 @@ weight: 100
 
 ## Deploying a Persistent Spring Boot Application
 
-Now that you have worked closely with the EC2 and S3 service it is time to take things one step further. You are going to deploy a web application that is connected to a MySQL database. Below you will find the steps outlined.
+Now that you have worked closely with the EC2 and S3 service it is time to take things one step further. You are going to deploy a web application that is connected to a MySQL database. 
+
+Below you will find the steps outlined.
 
 ### Getting Organized
 What needs to happen for the Java/Spring Persistent web application to be deployed?
 
-#### EC2 Instance Created
-1. `Name of Instance`
-1. `AMI`
-1. `Instance Type`
-1. `Key Pair`
-1. `Security Group`
+You will need:
+1. New `EC2` Instance
+1. Built Artifacts of application cloned to `EC2` instance
+1. Correct version of `Java` installed on `EC2`
+1. Web Server installed on `EC2`
+1. `Docker` installed to create a `MySQL` container for the database
 
-#### Machine State
-1. `git` must be installed
-1. web server must be installed
+#### EC2 Instance Created
+1. `Name of Instance`: java-spring-persistent
+1. `AMI`: Ubuntu 22.04
+1. `Instance Type`: t2 micro
+1. `Key Pair`: Not Required
+1. `Security Group`: New Security Group:
+    1. `HTTP` enabled
+
+After creating your new `EC2` you can now use `EC2 Instance Connect` to connect to your virtual server. 
 
 #### Project Artifacts
-The artifacts are already built, they just need to be installed onto the machine with `git`. 
+The artifacts are already built, they just need to be installed onto the virtual machine with `git`. 
 
 1. use `git` to clone the build artifacts
 
@@ -33,8 +41,18 @@ Build artifacts for this deployment:
 `https://github.com/LaunchCodeTechnicalTraining/java-techjobs-persistent-artifacts`
 {{% /notice %}}
 
-#### Web Server Configured
-`caddy`, `nginx`, or some other web server must be configured to catch `HTTP` requests and respond as a `reverse_proxy` to our running application.
+#### Java
+
+This application uses `Java 11`. To install the correct version of `Java` you will be using your package manager.
+
+Run the following command within the `EC2` instance through `EC2 Instance Connect`
+
+```bash
+sudo apt install openjdk-11-jre -y
+```
+
+#### Web Server
+`caddy`, `nginx`, or some other web server must be installed to catch `HTTP` requests and respond as a `reverse_proxy` to our running application.
 
 {{% notice "green" Bonus %}}
 You can find Installation steps for both `caddy` and `nginx` here:
@@ -42,14 +60,6 @@ You can find Installation steps for both `caddy` and `nginx` here:
 - [Nginx Installation](https://launchcodetechnicaltraining.org/linux/web-server/nginx/setup/)
 {{% /notice %}}
 
-#### Environment Variables
-
-This application was created using environment variables in order to connect to the `MySQL` database. 
-
-This was done for multiple reasons:
-1. `Security`
-1. `Ease of use`
-1. `Ability to change database settings`
 
 #### Docker Installation
 
@@ -79,6 +89,24 @@ apt-cache policy docker-ce
 
 sudo apt install docker-ce
 ```
+
+## Starting the Application
+
+Now that you have:
+1. Created a new `EC2`
+    1. Cloned the build artifacts
+    1. Installed `Java`
+    1. Installed a Web Server
+    1. Installed `docker`
+
+#### Environment Variables
+
+This application was created using environment variables in order to connect to the `MySQL` database. 
+
+This was done for multiple reasons:
+1. `Security`
+1. `Ease of use`
+1. `Ability to change database settings`
 
 #### Running Application
 
