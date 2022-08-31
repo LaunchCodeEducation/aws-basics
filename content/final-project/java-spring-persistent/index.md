@@ -133,12 +133,30 @@ If you would like to read the documentation for the `MySQL` `docker` image you c
 [Docker MySQL Image Docs](https://hub.docker.com/_/mysql)
 {{% /notice %}}
 
+#### Starting Java-Spring Application
+
 This application was created using environment variables in order to connect to the `MySQL` database. 
 
-This was done for multiple reasons:
-1. `Security`
-1. `Ease of use`
-1. `Ability to change database settings`
+Similar to creating the `docker` image you will need to assign the variables values when starting the java application.
+
+The available environment variables you will be using are as follows:
+- `RDS_ENDPOINT`: Endpoint for `MySQL` database. This value will be the auto-assigned `ipv4-address` of your `EC2` instance
+- `DB_PORT`: Port `MySQL` is running on (3306)
+- `DB_NAME`: Name of database
+- `DB_USERNAME`: Username 
+- `DB_PASSWORD`: Password
+- `SERVER_PORT`: Designated Port that you want the application to run on.
+
+Run the following command to boot your `Java-Spring` project and connect to the `MySQL` database:
+
+```bash
+java -DRDS_ENDPOINT="ipv4-address" -DDB_PORT="3306" -DDB_NAME="techjobs" -DDB_USERNAME="techjobs" -DDB_PASSWORD="tech" -DSERVER_PORT="8080" -jar path/to/build/artifacts/java-techjobs-persistent-artifacts.jar 
+```
+{{% notice warning %}}
+You will need to replace the `-DRDS_ENDPOINT="ipv4-address"` with the public `ipv4-address` of your `EC2`!
+
+You will also need to specify the path to the `.jar` file within your `EC2` instance.
+{{% /notice %}}
 
 #### Running Application
 
