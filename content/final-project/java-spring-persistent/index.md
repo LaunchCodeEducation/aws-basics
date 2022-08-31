@@ -55,7 +55,7 @@ sudo apt install openjdk-11-jre -y
 `caddy`, `nginx`, or some other web server must be installed to catch `HTTP` requests and respond as a `reverse_proxy` to our running application.
 
 {{% notice "green" Bonus %}}
-You can find Installation steps for both `caddy` and `nginx` here:
+You can find Installation steps and further information for both `caddy` and `nginx` here:
 - [Caddy Installation](https://launchcodetechnicaltraining.org/linux/web-server/caddy/setup/)
 - [Nginx Installation](https://launchcodetechnicaltraining.org/linux/web-server/nginx/setup/)
 {{% /notice %}}
