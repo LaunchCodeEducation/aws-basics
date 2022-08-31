@@ -99,7 +99,39 @@ Now that you have:
     1. Installed a Web Server
     1. Installed `docker`
 
-#### Environment Variables
+You are ready to do the following:
+1. Create a `MySQL` container using `docker`
+1. Start the `Java-Spring` application
+1. Configure the Web Server
+1. Access the running application in your browser
+
+#### Creating the MySQL Docker Container
+
+`Environment Variables`: docker allows the user to provide enviroment variables when creating the `MySQL` container.
+
+The available environment variables you will be using are as follows:
+- `MYSQL_ROOT_PASSWORD`: Required variable when creating a `MySQL` docker container
+- `MYSQL_USER`: Specifies username for database
+- `MYSQL_PASSWORD`: Specifies password for the username
+- `MYSQL_DATABASE`: Specifies name of database
+
+Run the below command to create the `MySQL` container:
+
+```bash
+sudo docker run --name name-of-container -p 3306:3306 -e MYSQL_ROOT_PASSWORD="admin" -e MYSQL_USER="techjobs" -e MYSQL_PASSWORD="tech" -e MYSQL_DATABASE="techjobs" -d mysql
+```
+
+Breakdown of command:
+1. `sudo docker run --name name-of-container`: Creating a new container with any provided name
+1. `-p 3306:3306`: specifying what port the database can be accessed
+1. `-e MYSQL_ROOT_PASSWORD="admin" -e MYSQL_USER="techjobs"`: Environment variables with values
+1. `-d mysql`: targeting `MySQL` docker image
+
+{{% notice "green" Bonus %}}
+If you would like to read the documentation for the `MySQL` `docker` image you can find the information here:
+
+[Docker MySQL Image Docs](https://hub.docker.com/_/mysql)
+{{% /notice %}}
 
 This application was created using environment variables in order to connect to the `MySQL` database. 
 
