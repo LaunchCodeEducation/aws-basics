@@ -158,9 +158,64 @@ You will need to replace the `-DRDS_ENDPOINT="ipv4-address"` with the public `ip
 You will also need to specify the path to the `.jar` file within your `EC2` instance.
 {{% /notice %}}
 
+#### Configure Web Server
+
+This walkthrough will utilize `caddy` for the web server.
+
+You will need to edit the default `caddy` file. This walkthrough utilizes `vim` to edit the file.
+
+{{% notice green "Bonus" %}}
+If you need a refresher on `vim` or are unfamiliar with the tool you can find useful information here:
+
+[Vim Walkthrough / Introduction](https://launchcodetechnicaltraining.org/linux/userspace-applications/walkthrough/vim/)
+{{% /notice %}}
+
+Run the following command:
+
+```bash
+sudo vim /etc/caddy/Caddyfile
+```
+
+Remove all content within the file.
+
+Add the following content:
+
+```bash
+your-public-ipv4-address {
+    reverse_proxy 127.0.0.1:8080
+}
+```
+Write and Quit the file.
+
+##### Reload Caddy
+
+In order for the changes you made to the default `caddy` file to take effect you will need to reload `caddy`.
+
+Run the following command:
+
+```bash
+sudo caddy reload --config /etc/caddy/Caddyfile
+```
+
+{{% expand "Click here for Caddy Troubleshooting" %}}
+If you are having issues with caddy you may need to run the following commands.
+
+```bash
+sudo systemctl stop caddy
+```
+
+```bash
+sudo caddy start
+```
+
+```bash
+sudo caddy reload --config /etc/caddy/Caddyfile
+```
+{{% /expand %}}
+
 #### Running Application
 
-After completing the above steps you should be able to open your browser to the `public-ipv4` address of your `EC2` instance to view the running application.
+After completing the above steps you should now be able to open your browser to the `public-ipv4` address of your `EC2` instance to view the running application.
 
 ![Running Java Techjobs Persistent Application](pictures/running-techjobs-application.png?classes=border)
 
