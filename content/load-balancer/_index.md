@@ -2,7 +2,7 @@
 title: "EC2 Load Balancer"
 date: 2022-05-04T14:45:47-05:00
 draft: false
-hidden: false
+hidden: true
 weight: 150
 ---
 
