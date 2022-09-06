@@ -45,3 +45,5 @@ Provide the verification code sent to your email.
 ![AWS Account Support Plan](pictures/support-plan.png?classes=border)
 
 ![AWS Account Setup Complete](pictures/setup-complete.png?classes=border)
+
+![AWS Account Login Prompt](pictures/login-prompt.png?classes=border)
