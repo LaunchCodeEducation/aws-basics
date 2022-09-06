@@ -13,3 +13,11 @@ Please note that you will need to provide a valid credit card while creating you
 {{% /notice %}}
 
 There will also be an introduction to the billing section of the AWS platform that provides you with all of the information on any costs that you would have under the account.
+
+Please click the following link to **[Create your AWS Account](https://portal.aws.amazon.com/billing/signup#/start/email)**
+
+{{% notice warning %}}
+If you already have an AWS Account you do not need to create a new one!
+{{% /notice %}}
+
+![AWS Account Creation page](pictures/aws-account-creation-homepage.png?classes=border)
