@@ -1,5 +1,5 @@
 ---
-title: "Java Spring Persistent Scripted"
+title: "Scripting with User Data"
 date: 2022-05-04T14:45:47-05:00
 draft: false
 weight: 105
@@ -9,25 +9,27 @@ weight: 105
 
 After deploying the persistent Java application you can take things one step further and create your `EC2` instance providing `User Data`
 
-The `User Data` is a way for us to give instructions to the `EC2` instance to complete on creation.
+`User Data` is a way for us to give instructions to the `EC2` instance to complete on creation. This allows you to automate the process of installing the requirements to deploy your web application.
 
 ### Getting Organized
-What needs to happen for the Java/Spring Persistent web application to be deployed?
+This walkthrough will take the `Java/Spring` application deployment requirements and store them inside of one script.
 
-You will need:
-1. New `EC2` Instance
-1. Built Artifacts of application cloned to `EC2` instance
+The Script will need:
+1. Built Artifacts of application cloned to `EC2`
 1. Correct version of `Java` installed on `EC2`
 1. Web Server installed on `EC2`
-1. Web Server configuation file
+1. Web Server file configured
+1. `public-ipv4` address of web server
+    1. This will be needed for the web server configuration
 1. `Docker` installed to create a `MySQL` container for the database
-#### EC2 Instance Created
-1. `Name of Instance`: java-spring-persistent
-1. `AMI`: Ubuntu 22.04
-1. `Instance Type`: t2 micro
-1. `Key Pair`: Not Required
-1. `Security Group`: New Security Group:
-    1. `HTTP` enabled
+
+### Scripting with Bash
+
+This walkthrough will be completing the above task utilizing a `Bash` script.
+
+{{% notice note %}}
+The steps to manually deploy the application have been included below. The goal of this walkthrough is to have the script perform all of these steps so that the entire process is automated. For more information on scripting please reference the ["Bash: Scripting" section from the Linux Curriculum](https://launchcodetechnicaltraining.org/linux/bash-scripting/)
+{{% /notice %}}
 
 #### Project Artifacts
 The artifacts are already built, they just need to be installed onto the virtual machine with `git`. 
