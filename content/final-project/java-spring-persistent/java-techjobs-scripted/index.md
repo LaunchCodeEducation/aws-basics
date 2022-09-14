@@ -140,7 +140,6 @@ your-public-ipv4-address {
     reverse_proxy 127.0.0.1:8080
 }
 ```
-Write and Quit the file.
 
 ##### Reload Caddy
 
@@ -149,7 +148,7 @@ In order for the changes you made to the default `caddy` file to take effect you
 Run the following command:
 
 ```bash
-sudo caddy reload --config /etc/caddy/Caddyfile
+sudo caddy reload --config /path/to/your/Caddyfile
 ```
 
 {{% expand "Click here for Caddy Troubleshooting" %}}
