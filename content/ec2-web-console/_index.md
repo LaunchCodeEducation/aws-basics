@@ -15,13 +15,18 @@ Dependant upon the requirements for your application, any `Virtual Server` you c
 
 Some of these settings are slightly out of scope for what we are trying to accomplish with this course. We will be utilizing the `free` tier eligible options so that you do not accrue larger amounts of cost when using `AWS`.
 
+### Common Use Cases
+- Hosting a web application
+- Testing
+- Load Balancing
+- Migration
+
 ### How This Course Utilizes Amazon EC2:
 - Deploying Static Websites to Virtual `Linux` Server's:
     - `Angular Application`
     - `React Application`
 - Deploying Persistent Web Applications to a Virtual `Linux` Server connected to a private `RDS Database`
     - `Java/Spring Application`
-    - `C#/.NET Application`
 
 {{% notice "green" Bonus %}}
 - To learn more about the `Amazon Elastic Compute Cloud` service please visit the `AWS Docs`:
