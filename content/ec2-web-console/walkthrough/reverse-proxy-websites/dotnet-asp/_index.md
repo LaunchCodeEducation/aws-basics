@@ -57,6 +57,61 @@ sudo apt update -y
 ### Project Requirements
 
 In order start our `C#/ASP.NET` application you will need the following:
+1. Project Artifacts cloned
+    1. `https://github.com/LaunchCodeTechnicalTraining/dotnet-mvc-artifacts`
+1. `dotnet` CLI installed
+    1. `dotnet-sdk-3.1`
+1. Web Server Installed (Caddy)
+    1. Web Server configured (Caddy)
 
+### Clone Project Artifacts
+
+```bash
+git clone https://github.com/LaunchCodeTechnicalTraining/dotnet-mvc-artifacts
+```
+
+![Clone dotnet Project Build Artifacts](pictures/clone-dotnet-artifacts.png?classes=border)
+
+### Install dotnet-sdk
+
+```bash
+sudo apt install dotnet-sdk-6.0
+```
+
+Confirm that you want to Install the Package:
+
+![Install Dotnet SDK Package](pictures/apt-install-dotnet-Y.png?classes=border)
+
+Check that the Package has been successfully installed running the following command:
+
+```bash
+which dotnet
+```
+
+![Dotnet Package Installed Validation](pictures/dotnet-installed-check.png?classes=border)
+
+You can see that the Package has been installed and is located in the `/usr/bin/` directory.
+
+### Install Caddy
+
+```bash
+sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
+```
+
+```bash
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+```
+
+```bash
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+```
+
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install caddy
+```
 
 
