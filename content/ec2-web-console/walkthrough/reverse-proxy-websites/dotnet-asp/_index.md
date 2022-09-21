@@ -82,15 +82,26 @@ Confirm that you want to Install the Package:
 
 ![Install Dotnet SDK Package](pictures/apt-install-dotnet-Y.png?classes=border)
 
-Check that the Package has been successfully installed running the following command:
+{{% notice note %}}
+Check that the Package has been successfully installed running the following command: `which dotnet`
+{{% /notice %}}
 
 ```bash
 which dotnet
 ```
-
 ![Dotnet Package Installed Validation](pictures/dotnet-installed-check.png?classes=border)
 
 You can see that the Package has been installed and is located in the `/usr/bin/` directory.
+
+You can also check that you have the correct version installed with the following command:
+
+```bash
+dotnet --version
+```
+
+![Check Version of dotnet](pictures/dotnet--version.png?classes=border)
+
+You can see that the version is `6.0.x`.
 
 ### Install Caddy
 
@@ -114,4 +125,66 @@ sudo apt update
 sudo apt install caddy
 ```
 
+{{% notice note %}}
+Verify that caddy was installed using the following commands:
+{{% /notice %}}
 
+```bash
+which caddy
+```
+
+```bash
+caddy version
+```
+
+![Caddy Installation Validation](pictures/caddy-install-validation.png?classes=border)
+
+### Configure Web Server
+
+Now that you have cloned the project `build artifacts` in addition to installing the correct `SDK` and `Web Server` you need to configure your `Caddyfile`.
+
+{{% notice note %}}
+The `ASP.NET` project will be running on port `5000`. That means you will need to configure a reverse proxy within your `Caddyfile` to handle the `HTTP` requests to port `5000` on the running server.
+{{% /notice %}}
+
+Run the following command to open your default `Caddyfile`:
+
+```bash
+sudo vim /etc/caddy/Caddyfile
+```
+
+![Default Caddyfile View](pictures/default-caddyfile.png?classes=border)
+
+Remove all content within the file and overwrite it with the following:
+
+```bash
+http://your-public-ipv4-address {
+    reverse_proxy 127.0.0.1:5000
+}
+```
+
+After making changes to your `Caddyfile` you will need to reload it with the following command:
+
+```bash
+sudo caddy reload --config /etc/caddy/Caddyfile
+```
+
+### Start ASP.NET Application
+
+Now that the web server is configured you are ready to start your application.
+
+Navigate to your `dotnet-mvc-artifacts` directory and run the following command:
+
+```bash
+dotnet run
+```
+
+![ASP.NET Run Command](pictures/dotnet-run.png?classes=border)
+
+### Validation
+
+Now that the application is up and running you should be able to access it within your browser.
+
+Open a new browser window and access the application at `http://your-public-ipv4-address`
+
+![Running ASP.NET Application](pictures/running-dotnet-application.png?classes=border)
