@@ -11,6 +11,9 @@ The following walkthrough content for the `AWS EC2` service will take you throug
 - Deploying `Static Websites`
     - React
     - Angular
+- Deploying `MVC Applications` using a Reverse Proxy.
+    - Java/Spring
+    - C#/ASP.NET
 
 ## Content Links
 
