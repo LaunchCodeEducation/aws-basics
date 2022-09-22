@@ -58,11 +58,11 @@ sudo apt update -y
 
 In order start our `C#/ASP.NET` application you will need the following:
 1. Project Artifacts cloned
-    1. `https://github.com/LaunchCodeTechnicalTraining/dotnet-mvc-artifacts`
+    - `https://github.com/LaunchCodeTechnicalTraining/dotnet-mvc-artifacts`
 1. `dotnet` CLI installed
-    1. `dotnet-sdk-3.1`
+    - `dotnet-sdk-3.1`
 1. Web Server Installed (Caddy)
-    1. Web Server configured (Caddy)
+    - Web Server configured (Caddy)
 
 ### Clone Project Artifacts
 
