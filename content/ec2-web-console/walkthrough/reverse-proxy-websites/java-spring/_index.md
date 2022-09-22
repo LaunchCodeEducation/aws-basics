@@ -11,7 +11,7 @@ This walkthrough will take a `Java/Spring` application and proxy the `HTTP` requ
 
 {{% notice note %}}
 The build artifacts for this walkthrough are located here:
-`https://github.com/LaunchCodeTechnicalTraining/dotnet-mvc-artifacts`
+`https://github.com/LaunchCodeTechnicalTraining/spring-techjobs-mvc-artifact`
 {{% /notice %}}
 
 ### Machine Settings
@@ -44,9 +44,9 @@ Verify your settings are similar to the above screenshot within the `EC2 Instanc
 
 Click the `Connect` button.
 
-Now that you have connected to your instance it is always good practive to update your server.
-
 ![EC2 Instance Connect View](pictures/ec2-instance-connect.png?classes=border)
+
+Now that you have connected to your instance it is always good practive to update your server.
 
 Run the following command:
 
@@ -58,7 +58,7 @@ sudo apt update -y
 
 In order start our `Java/Spring` application you will need the following:
 1. Project Artifacts cloned
-    - `https://github.com/LaunchCodeTechnicalTraining/dotnet-mvc-artifacts`
+    - `https://github.com/LaunchCodeTechnicalTraining/spring-techjobs-mvc-artifact`
 1. `open-jdk` installed
     - `openjdk-11-jre`
 1. Web Server Installed (Caddy)
@@ -66,7 +66,33 @@ In order start our `Java/Spring` application you will need the following:
 
 ### Clone Project Artifacts
 
+```bash
+git clone https://github.com/LaunchCodeTechnicalTraining/spring-techjobs-mvc-artifact
+```
+
+![Clone Spring Project Artifacts](pictures/git-clone-spring-artifacts.png?classes=border)
+
 ### Install Java SDK
+
+```bash
+sudo apt install openjdk-11-jre
+```
+
+Validate that it was installed correctly with the following commands:
+
+```bash
+which java
+```
+
+```bash
+java --version
+```
+
+![Validate openjdk Installation](pictures/validate-openjdk-install.png?classes=border)
+
+{{% notice note %}}
+You can see that the `openjdk-11` Runtime Environment was installed correctly. This will allow us to start our `Java` project using the build artifacts provided.
+{{% /notice %}}
 
 ### Install Caddy
 
@@ -106,7 +132,7 @@ caddy version
 
 ### Configure Web Server
 
-Now that you have cloned the project `build artifacts` in addition to installing the correct `SDK` and `Web Server` you need to configure your `Caddyfile`.
+Now that you have cloned the project `build artifacts` in addition to installing the correct `Java runtime environment` and `Web Server` you need to configure your `Caddyfile`.
 
 {{% notice note %}}
 The `Spring` project will be running on port `8080`. That means you will need to configure a reverse proxy within your `Caddyfile` to handle the `HTTP` requests to port `8080` on the running server.
@@ -121,6 +147,10 @@ sudo vim /etc/caddy/Caddyfile
 ![Default Caddyfile View](pictures/default-caddyfile.png?classes=border)
 
 Remove all content within the file and overwrite it with the following:
+
+{{% notice note %}}
+If you need a refresher on how to use `vim` you can visit the `Linux` curriculum here: [Vim Introduction](https://launchcodetechnicaltraining.org/linux/userspace-applications/walkthrough/vim/)
+{{% /notice %}}
 
 ```bash
 http://your-public-ipv4-address {
