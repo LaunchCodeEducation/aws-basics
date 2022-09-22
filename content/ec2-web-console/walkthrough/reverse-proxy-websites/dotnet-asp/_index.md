@@ -157,7 +157,7 @@ sudo vim /etc/caddy/Caddyfile
 
 Remove all content within the file and overwrite it with the following:
 
-{{% notice note %}}
+{{% notice "green" Bonus %}}
 If you need a refresher on how to use `vim` you can visit the `Linux` curriculum here: [Vim Introduction](https://launchcodetechnicaltraining.org/linux/userspace-applications/walkthrough/vim/)
 {{% /notice %}}
 

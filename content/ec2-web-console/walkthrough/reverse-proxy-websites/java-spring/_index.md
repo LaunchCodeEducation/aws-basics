@@ -148,7 +148,7 @@ sudo vim /etc/caddy/Caddyfile
 
 Remove all content within the file and overwrite it with the following:
 
-{{% notice note %}}
+{{% notice "green" Bonus %}}
 If you need a refresher on how to use `vim` you can visit the `Linux` curriculum here: [Vim Introduction](https://launchcodetechnicaltraining.org/linux/userspace-applications/walkthrough/vim/)
 {{% /notice %}}
 
@@ -166,4 +166,20 @@ sudo caddy reload --config /etc/caddy/Caddyfile
 
 ### Start Java/Spring Application
 
+Now that the web server is configured you are ready to start your application.
+
+Navigate to your `spring-techjobs-mvc-artifacts` directory and run the following command:
+
+```bash
+java -jar spring-mvc.jar
+```
+
+![Running Spring Application](pictures/running-spring-application.png?classes=border)
+
 ### Validation
+
+Now that the application is up and running you should be able to access it within your browser.
+
+Open a new browser window and access the application at `http://your-public-ipv4-address`
+
+![Spring Application In Browser](pictures/spring-application-browser.png?classes=border)
