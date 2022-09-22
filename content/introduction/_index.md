@@ -22,6 +22,3 @@ Amazon Elastic Compute Cloud and Amazon S3 are among the first services provided
 - `Amazon Elastic Compute Cloud` (Amazon EC2)
 - `Amazon Simple Storage Service` (Amazon S3)
 - `AWS Web Console`
-
-
-![DFBfbadbd](pictures/path.png?classes=border)
