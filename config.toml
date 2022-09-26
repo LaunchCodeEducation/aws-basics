@@ -1,6 +1,6 @@
-baseURL = 'https://lctt-aws-basics.netlify.app'
-languageCode = 'en-us'
-title = 'AWS Basics'
+baseURL = "https://lctt-aws-basics.netlify.app"
+languageCode = "en-us"
+title = "AWS Basics"
 theme = "hugo-theme-relearn"
 
 [outputs]
