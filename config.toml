@@ -3,7 +3,12 @@ languageCode = 'en-us'
 title = 'AWS Basics'
 theme = "hugo-theme-relearn"
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 canonifyURLs = true
 
 [params]
   themeVariant = ["lc-light", "lc-dark-blue", "lc-dark-blue-two"]
+
+
