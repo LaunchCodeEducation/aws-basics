@@ -141,7 +141,7 @@ caddy version
 
 ### Configure Web Server
 
-Now that you have cloned the project `build artifacts` in addition to installing the correct `SDK` and `Web Server` you need to configure your `Caddyfile`.
+Now that you have cloned the project `build artifacts` and installed both the correct `SDK` and `Web Server`, you need to configure your Caddyfile.
 
 {{% notice note %}}
 The `ASP.NET` project will be running on port `5000`. That means you will need to configure a reverse proxy within your `Caddyfile` to handle the `HTTP` requests to port `5000` on the running server.
