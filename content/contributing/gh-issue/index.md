@@ -74,18 +74,6 @@ In addition you can open a new blank issue in which you can bring an issue to ou
 
 ## Creating a New LaunchCode GitHub Issue
 
-### Curriculum Repository Homepage
-
-![lctt-linux-homepage](pictures/lctt-linux-homepage.png?classes=border)
-
-### Curriculum Repository Issues Homepage
-
-![lctt-linux-issues-home](pictures/lctt-linux-issues-home.png?classes=border)
-
-### Curriculum Repository Choose New Issue Template
-
-![lctt-linux-issues-choose](pictures/lctt-linux-issues-choose.png?classes=border)
-
 ## Available Issue Templates
 
 LaunchCode provides three Issue Templates, that we encourage you to use:
