@@ -1,5 +1,5 @@
 ---
-title: "Java Spring Persistent Scripted"
+title: "Scripting with User Data"
 date: 2022-05-04T14:45:47-05:00
 draft: false
 weight: 105
@@ -9,25 +9,28 @@ weight: 105
 
 After deploying the persistent Java application you can take things one step further and create your `EC2` instance providing `User Data`
 
-The `User Data` is a way for us to give instructions to the `EC2` instance to complete on creation.
+`User Data` is a way for us to give instructions to the `EC2` instance to complete on creation. This allows you to automate the process of installing the requirements to deploy your web application.
 
 ### Getting Organized
-What needs to happen for the Java/Spring Persistent web application to be deployed?
+This walkthrough will take the `Java/Spring` application deployment requirements and store them inside of one script.
 
-You will need:
-1. New `EC2` Instance
-1. Built Artifacts of application cloned to `EC2` instance
+The Script will need:
+1. Built Artifacts of application cloned to `EC2`
 1. Correct version of `Java` installed on `EC2`
 1. Web Server installed on `EC2`
-1. Web Server configuation file
+1. Web Server file configured
+1. `public-ipv4` address of web server
+    1. This will be needed for the web server configuration
 1. `Docker` installed to create a `MySQL` container for the database
-#### EC2 Instance Created
-1. `Name of Instance`: java-spring-persistent
-1. `AMI`: Ubuntu 22.04
-1. `Instance Type`: t2 micro
-1. `Key Pair`: Not Required
-1. `Security Group`: New Security Group:
-    1. `HTTP` enabled
+1. Bash Heredoc within script to write to Web Server configuration file
+
+### Scripting with Bash
+
+This walkthrough will be completing the above task utilizing a `Bash` script.
+
+{{% notice "green" Bonus %}}
+The steps to manually deploy the application have been included below. The goal of this walkthrough is to have the script perform all of these steps so that the entire process is automated. For more information on scripting please reference the ["Bash: Scripting" section from the Linux Curriculum](https://launchcodetechnicaltraining.org/linux/bash-scripting/)
+{{% /notice %}}
 
 #### Project Artifacts
 The artifacts are already built, they just need to be installed onto the virtual machine with `git`. 
@@ -43,14 +46,14 @@ Build artifacts for this deployment:
 
 This application uses `Java 11`. To install the correct version of `Java` you will be using your package manager.
 
-Run the following command within the `EC2` instance through `EC2 Instance Connect`
+The following command will accomplish that.
 
 ```bash
 sudo apt install openjdk-11-jre -y
 ```
 
 #### Web Server
-`caddy`, `nginx`, or some other web server must be installed to catch `HTTP` requests and respond as a `reverse_proxy` to our running application.
+`caddy`, `nginx`, or some other web server must be installed to catch `HTTP` requests and respond as a `reverse_proxy` to the running application.
 
 {{% notice "green" Bonus %}}
 You can find Installation steps and further information for both `caddy` and `nginx` here:
@@ -65,12 +68,7 @@ In order to keep everything inside of our virtual-server you will be utilizing `
 
 This allows us to create a `MySQL` container inside of our virtual-server and configure it's settings so that our `Java` application is able to connect to it.
 
-{{% notice note %}}
-docker is an extremely useful tool and can be utilized in many different ways. To cover its entire purpose and numerous use cases is outside of the scope of this class. 
-
-If you would like to continue reading and learn more about `docker` you can find the documentation here:
-[docker docs](https://docs.docker.com/)
-{{% /notice %}}
+`Docker` can be installed using the below commands:
 
 ```bash
 sudo apt update -y
@@ -88,21 +86,6 @@ apt-cache policy docker-ce
 sudo apt install docker-ce
 ```
 
-## Starting the Application
-
-Now that you have:
-1. Created a new `EC2`
-    1. Cloned the build artifacts
-    1. Installed `Java`
-    1. Installed a Web Server
-    1. Installed `docker`
-
-You are ready to do the following:
-1. Create a `MySQL` container using `docker`
-1. Start the `Java-Spring` application
-1. Configure the Web Server
-1. Access the running application in your browser
-
 #### Creating the MySQL Docker Container
 
 `Environment Variables`: docker allows the user to provide enviroment variables when creating the `MySQL` container.
@@ -118,18 +101,6 @@ Run the below command to create the `MySQL` container:
 ```bash
 sudo docker run --name name-of-container -p 3306:3306 -e MYSQL_ROOT_PASSWORD="admin" -e MYSQL_USER="techjobs" -e MYSQL_PASSWORD="tech" -e MYSQL_DATABASE="techjobs" -d mysql
 ```
-
-Breakdown of command:
-1. `sudo docker run --name name-of-container`: Creating a new container with any provided name
-1. `-p 3306:3306`: specifying what port the database can be accessed
-1. `-e MYSQL_ROOT_PASSWORD="admin" -e MYSQL_USER="techjobs"`: Environment variables with values
-1. `-d mysql`: targeting `MySQL` docker image
-
-{{% notice "green" Bonus %}}
-If you would like to read the documentation for the `MySQL` `docker` image you can find the information here:
-
-[Docker MySQL Image Docs](https://hub.docker.com/_/mysql)
-{{% /notice %}}
 
 #### Starting Java-Spring Application
 
@@ -160,21 +131,7 @@ You will also need to specify the path to the `.jar` file within your `EC2` inst
 
 This walkthrough will utilize `caddy` for the web server.
 
-You will need to edit the default `caddy` file. This walkthrough utilizes `vim` to edit the file.
-
-{{% notice green "Bonus" %}}
-If you need a refresher on `vim` or are unfamiliar with the tool you can find useful information here:
-
-[Vim Walkthrough / Introduction](https://launchcodetechnicaltraining.org/linux/userspace-applications/walkthrough/vim/)
-{{% /notice %}}
-
-Run the following command:
-
-```bash
-sudo vim /etc/caddy/Caddyfile
-```
-
-Remove all content within the file.
+You will need to write the required content to the `caddy` config file with a `Bash Heredoc`.
 
 Add the following content:
 
@@ -183,7 +140,6 @@ your-public-ipv4-address {
     reverse_proxy 127.0.0.1:8080
 }
 ```
-Write and Quit the file.
 
 ##### Reload Caddy
 
@@ -192,7 +148,7 @@ In order for the changes you made to the default `caddy` file to take effect you
 Run the following command:
 
 ```bash
-sudo caddy reload --config /etc/caddy/Caddyfile
+sudo caddy reload --config /path/to/your/Caddyfile
 ```
 
 {{% expand "Click here for Caddy Troubleshooting" %}}
