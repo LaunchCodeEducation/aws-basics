@@ -16,9 +16,7 @@ This course is designed to provide an understanding of some fundamental skills n
 
 Learning how to navigate the `AWS Console` using the `Amazon EC2` and `Amazon S3` services to deploy static web applications is a great introduction to cloud services. 
 
-You will also learn how to connect an `Amazon EC2` instance to an `Amazon RDS` Datastore for applications that utilize a database. 
-
-This will give you an excellent understanding of what steps you need to take in order to take applications that you or others have built and deploy them to the cloud so that they are available publicly.
+This will give you an excellent understanding of what steps you need to take in order to take applications that you or others have built and deploy them to the cloud so that they are available to everyone.
 
 ### Where this Course Leads
 
