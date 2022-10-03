@@ -15,9 +15,7 @@ Once you create the Pull Request LaunchCode will be able to see your requested c
 
 ### Edit Page
 
-On the page where you have seen a typo, click the `Edit this Page` button found in the breadcrumb menu in the top right hand corner of your screen. It looks like the following picture:
-
-![Edit this Page](pictures/edit-this-page.png?classes=border)
+On the page where you have seen a typo, click the `Pencil` icon found in the breadcrumb menu in the top right hand corner of your screen. 
 
 ### Repository has Write Protection
 
