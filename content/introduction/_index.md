@@ -17,8 +17,14 @@ Amazon created this platform as a low-cost alternative within the cloud that is 
 
 Amazon Elastic Compute Cloud and Amazon S3 are among the first services provided by AWS. These first-generation services are still used to this day but have of course changed over time. 
 
+You will be learning how to navigate through the `AWS Web Console` to utilize the `S3` and `EC2` service to deploy web applications within the cloud.
+
 ## Major Concepts & Key Terminology
 - `Amazon Web Services`
 - `Amazon Elastic Compute Cloud` (Amazon EC2)
 - `Amazon Simple Storage Service` (Amazon S3)
 - `AWS Web Console`
+
+{{% notice "green" Bonus %}}
+You can always find useful information here within the [AWS Documentation](https://docs.aws.amazon.com/)
+{{% /notice %}}

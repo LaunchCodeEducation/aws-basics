@@ -29,11 +29,8 @@ Some of these settings are slightly out of scope for what we are trying to accom
     - `Java/Spring Application`
 
 {{% notice "green" Bonus %}}
-- To learn more about the `Amazon Elastic Compute Cloud` service please visit the `AWS Docs`:
-[Amazon EC2](https://aws.amazon.com/pm/ec2/?trk=36c6da98-7b20-48fa-8225-4784bced9843&sc_channel=ps&sc_campaign=acquisition&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Compute|EC2|US|EN|Text&s_kwcid=AL!4422!3!467723097970!e!!g!!aws%20ec2&ef_id=Cj0KCQjw9ZGYBhCEARIsAEUXITXLepMCpyRuPwmRjh362MEjx_X1o8D_SBiOCFj8zMr_vEOWgk38o00aAqHMEALw_wcB:G:s&s_kwcid=AL!4422!3!467723097970!e!!g!!aws%20ec2)
+- To learn more about the `Amazon Elastic Compute Cloud` service please visit the [AWS EC2 Docs](https://docs.aws.amazon.com/ec2/)
 {{% /notice %}}
-
-
 
 ## Content Links
 

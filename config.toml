@@ -13,7 +13,12 @@ canonifyURLs = true
   editURL = "https://github.com/LaunchCodeEducation/aws-basics/edit/master/content/"
 
 [[menu.shortcuts]]
+  name = "Billing and Resource Shutdown"
+  url = "/billing"
+  weight = 99998
+
+[[menu.shortcuts]]
   name = "Contributing to this Project"
   url = "/contributing"
-  weight = 99998
+  weight = 99999
 
