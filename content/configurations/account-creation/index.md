@@ -46,7 +46,7 @@ You will now need to provide your contact information.
 
 You have the option to select a `Business` or `Personal` account. You will be using this as a `Personal` account.
 
-{{% notice "red" warning%}}
+{{% notice warning %}}
 Make sure to select `Personal` for the account type!
 {{% /notice %}}
 
@@ -56,10 +56,10 @@ After filling in the required information you will need to select agree to the t
 
 ### Billing Information
 
-{{% notice "red" Warning %}}
+{{% notice warning %}}
 Please note that it states the following when completing the billing page:
 
-"We will not charge you for usage below AWS Free Tier limits. We may temporarily hold up to $1 USD (or an equivalent amount in local currency) as a pending transaction for 3-5 days to verify your identity."
+"_We will not charge you for usage below AWS Free Tier limits. We may temporarily hold up to $1 USD (or an equivalent amount in local currency) as a pending transaction for 3-5 days to verify your identity_."
 {{% /notice %}}
 
 ![AWS Account Billing Information](pictures/billing-information.png?classes=border)

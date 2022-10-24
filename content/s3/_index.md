@@ -7,7 +7,7 @@ weight: 105
 
 ## Intro to Amazon Simple Storage Service (Amazon S3)
 
-Amazon S3 is another one of Amazon’s many Web Services covered in this basics course. One of the great benefits of the S3 service is that you are able to create virtual storage extremely fast.
+One of the great benefits of the S3 service is that you are able to create virtual storage extremely fast.
 
 The AWS S3 resource is primarily used to store objects. The service offers scalability, data availability, security, and high performance.
 
@@ -16,6 +16,10 @@ The AWS S3 resource is primarily used to store objects. The service offers scala
 - Host Static Websites
 - Store and secure small or large amounts of data
 - Backup existing data
+- Build a data lake
+- Backup and restor critical data
+    - at a very low rate (glacial -- a different type of S3 bucket)
+- run cloud-native applications
 
 ### How This Course Utilizes Amazon S3:
 
