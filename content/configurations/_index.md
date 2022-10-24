@@ -1,8 +1,8 @@
 ---
-title: "AWS Account Creation"
+title: "Configurations"
 date: 2022-05-04T13:43:26-05:00
 draft: false
-weight: 100
+weight: 95
 ---
 
 ## AWS Account Creation Steps

@@ -30,4 +30,8 @@ The next step would be to learn additional cloud services so that you can integr
 
 ### Pre-Course Requirements
 
+{{% notice orange "Note" "rocket" %}}
 The only requirement to complete the content within this course is to have an AWS Account Created utilizing all free-tier eligible options.
+
+You can find more information on account creation within the [Configurations Section]({{< relref "/configurations" >}})
+{{% /notice %}}
