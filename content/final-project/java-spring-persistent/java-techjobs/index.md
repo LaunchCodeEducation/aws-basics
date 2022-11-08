@@ -38,7 +38,7 @@ The artifacts are already built, they just need to be installed onto the virtual
 
 {{% notice note %}}
 Build artifacts for this deployment:
-`https://github.com/LaunchCodeTechnicalTraining/java-techjobs-persistent-artifacts`
+`https://github.com/LaunchCodeTechnicalTraining/java-artifacts-persistent-aws`
 {{% /notice %}}
 
 #### Java
