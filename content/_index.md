@@ -16,7 +16,7 @@ Learning how to navigate the `AWS Console` using the `Amazon EC2` and `Amazon S3
 
 Working within the cloud is a highly demanded skillset. The "cloud" is quite a daunting term that covers a tremendous amount of tools and concepts. A great place to start within the cloud is by deploying web applications utilizing fundamental resources like `EC2` and `S3`.
 
-This course will give you an excellent understanding of these fundamental skills you need in order to move applications that you or others have built and into the cloud.
+This course will give you an excellent understanding of these fundamental skills you need in order to move applications that you or others have built into the cloud.
 
 ### Where this Course Leads
 
