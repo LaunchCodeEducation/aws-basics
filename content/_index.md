@@ -8,15 +8,15 @@ draft: false
 
 ### What is this Course
 
-This course is an introduction to the AWS Console.
-
-This course is designed to provide an understanding of some fundamental skills necessary to deploy web applications to a cloud environment. You will become familiar with 
+This course is an introduction to deploying web applications to the cloud. This introductory course will be utilizing the AWS console in order to accomplish this task.
 
 ### Why take this Course
 
-Learning how to navigate the `AWS Console` using the `Amazon EC2` and `Amazon S3` services to deploy static web applications is a great introduction to cloud services. 
+Learning how to navigate the `AWS Console` using the `Amazon EC2` and `Amazon S3` services to deploy static web applications is a great introduction to cloud services.
 
-This will give you an excellent understanding of what steps you need to take in order to take applications that you or others have built and deploy them to the cloud so that they are available to everyone.
+Working within the cloud is a highly demanded skillset. The "cloud" is quite a daunting term that covers a tremendous amount of tools and concepts. A great place to start within the cloud is by deploying web applications utilizing fundamental resources like `EC2` and `S3`.
+
+This course will give you an excellent understanding of these fundamental skills you need in order to move applications that you or others have built into the cloud.
 
 ### Where this Course Leads
 
@@ -30,4 +30,8 @@ The next step would be to learn additional cloud services so that you can integr
 
 ### Pre-Course Requirements
 
+{{% notice orange "Note" "rocket" %}}
 The only requirement to complete the content within this course is to have an AWS Account Created utilizing all free-tier eligible options.
+
+You can find more information on account creation within the [Configurations Section]({{< relref "/configurations" >}})
+{{% /notice %}}

@@ -1,24 +1,13 @@
 ---
-title: "AWS Account Creation"
+title: "AWS Account"
 date: 2022-05-04T13:43:26-05:00
 draft: false
 weight: 100
 ---
 
-## AWS Account Creation Steps
-The following information  is meant to serve as a guide to create a new AWS account using all of the free options. 
-
-{{% notice note %}}
-Please note that you will need to provide a valid credit card while creating your AWS Account. You will not be immediately charged with any fees. This course will utilize all available free-tiers on the platform so that you accrue the absolute minimum amount possible.
-{{% /notice %}}
-
-There will also be an introduction to the billing section of the AWS platform that provides you with all of the information on any costs that you would have under the account.
+## AWS Account Creation
 
 Please click the following link to **[Create your AWS Account](https://aws.amazon.com/free)**
-
-{{% notice warning %}}
-If you already have an AWS Account you do not need to create a new one!
-{{% /notice %}}
 
 ![Free Account View Page](pictures/aws-amazon-free.png?classes=border)
 
@@ -57,7 +46,7 @@ You will now need to provide your contact information.
 
 You have the option to select a `Business` or `Personal` account. You will be using this as a `Personal` account.
 
-{{% notice "red" warning%}}
+{{% notice warning %}}
 Make sure to select `Personal` for the account type!
 {{% /notice %}}
 
@@ -67,10 +56,10 @@ After filling in the required information you will need to select agree to the t
 
 ### Billing Information
 
-{{% notice "red" Warning %}}
+{{% notice warning %}}
 Please note that it states the following when completing the billing page:
 
-"We will not charge you for usage below AWS Free Tier limits. We may temporarily hold up to $1 USD (or an equivalent amount in local currency) as a pending transaction for 3-5 days to verify your identity."
+"_We will not charge you for usage below AWS Free Tier limits. We may temporarily hold up to $1 USD (or an equivalent amount in local currency) as a pending transaction for 3-5 days to verify your identity_."
 {{% /notice %}}
 
 ![AWS Account Billing Information](pictures/billing-information.png?classes=border)
@@ -108,13 +97,3 @@ Once your setup is complete you will receive a notification.
 ![AWS Account Setup Complete](pictures/setup-complete.png?classes=border)
 
 Feel free to click on the `Go to the AWS Management Console` button to login.
-
-### Root User Login
-
-To log in to the AWS account you will need to provide the root user email address and password you created earlier in this walkthrough.
-
-![AWS Account Login Prompt](pictures/login-prompt.png?classes=border)
-
-After logging in to your your new `AWS` account you should see a view similar to the following screenshot:
-
-![AWS Console Homepage](pictures/console-homepage.png?classes=border)
