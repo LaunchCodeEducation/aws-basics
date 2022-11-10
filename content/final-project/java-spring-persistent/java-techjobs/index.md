@@ -45,7 +45,11 @@ Build artifacts for this deployment:
 
 This application uses `Java 11`. To install the correct version of `Java` you will be using your package manager.
 
-Run the following command within the `EC2` instance through `EC2 Instance Connect`
+Run the following commands within the `EC2` instance through `EC2 Instance Connect`
+
+```bash
+sudo apt update -y
+```
 
 ```bash
 sudo apt install openjdk-11-jre -y
@@ -76,17 +80,29 @@ If you would like to continue reading and learn more about `docker` you can find
 
 ```bash
 sudo apt update -y
+```
 
+```bash
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
+```
 
+```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+```
 
+```bash
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
 
+```bash
 sudo apt update -y
+```
 
+```bash
 apt-cache policy docker-ce
+```
 
+```bash
 sudo apt install docker-ce
 ```
 
@@ -150,12 +166,10 @@ The available environment variables you will be using are as follows:
 Run the following command to boot your `Java-Spring` project and connect to the `MySQL` database:
 
 ```bash
-java -DRDS_ENDPOINT="ipv4-address" -DDB_PORT="3306" -DDB_NAME="techjobs" -DDB_USERNAME="techjobs" -DDB_PASSWORD="tech" -DSERVER_PORT="8080" -jar path/to/build/artifacts/java-techjobs-persistent-artifacts.jar 
+java -DRDS_ENDPOINT="127.0.0.1" -DDB_PORT="3306" -DDB_NAME="techjobs" -DDB_USERNAME="techjobs" -DDB_PASSWORD="tech" -DSERVER_PORT="8080" -jar path/to/build/artifacts/java-techjobs-persistent-artifacts.jar 
 ```
 {{% notice warning %}}
-You will need to replace the `-DRDS_ENDPOINT="ipv4-address"` with the public `ipv4-address` of your `EC2`!
-
-You will also need to specify the path to the `.jar` file within your `EC2` instance.
+You will need to specify the path to the `.jar` file within your `EC2` instance.
 {{% /notice %}}
 
 #### Configure Web Server
