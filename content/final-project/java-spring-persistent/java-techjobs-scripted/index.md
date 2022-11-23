@@ -11,6 +11,10 @@ After deploying the persistent Java application you can take things one step fur
 
 `User Data` is a way for us to give instructions to the `EC2` instance to complete on creation. This allows you to automate the process of installing the requirements to deploy your web application.
 
+{{% notice note %}}
+The steps below will guide you through creating a script to inject into the `User Data` section when creating a new `EC2` instance.
+{{% /notice %}}
+
 ### Getting Organized
 This walkthrough will take the `Java/Spring` application deployment requirements and store them inside of one script.
 
@@ -23,6 +27,8 @@ The Script will need:
     1. This will be needed for the web server configuration
 1. `Docker` installed to create a `MySQL` container for the database
 1. Bash Heredoc within script to write to Web Server configuration file
+
+Create a new file called `java-techjobs-scripted.sh` and begin to add the content below to the file.
 
 ### Scripting with Bash
 
@@ -39,7 +45,7 @@ The artifacts are already built, they just need to be installed onto the virtual
 
 {{% notice note %}}
 Build artifacts for this deployment:
-`https://github.com/LaunchCodeTechnicalTraining/java-techjobs-persistent-artifacts`
+`https://github.com/LaunchCodeTechnicalTraining/java-artifacts-persistent-aws`
 {{% /notice %}}
 
 #### Java
@@ -109,7 +115,7 @@ This application was created using environment variables in order to connect to 
 Similar to creating the `docker` image you will need to assign the variables values when starting the java application.
 
 The available environment variables you will be using are as follows:
-- `RDS_ENDPOINT`: Endpoint for `MySQL` database. This value will be the auto-assigned `ipv4-address` of your `EC2` instance
+- `RDS_ENDPOINT`: Endpoint for `MySQL` database. This value will be `127.0.0.1`
 - `DB_PORT`: Port `MySQL` is running on (3306)
 - `DB_NAME`: Name of database
 - `DB_USERNAME`: Username 
@@ -119,12 +125,10 @@ The available environment variables you will be using are as follows:
 Run the following command to boot your `Java-Spring` project and connect to the `MySQL` database:
 
 ```bash
-java -DRDS_ENDPOINT="ipv4-address" -DDB_PORT="3306" -DDB_NAME="techjobs" -DDB_USERNAME="techjobs" -DDB_PASSWORD="tech" -DSERVER_PORT="8080" -jar path/to/build/artifacts/java-techjobs-persistent-artifacts.jar 
+java -DRDS_ENDPOINT="127.0.0.1" -DDB_PORT="3306" -DDB_NAME="techjobs" -DDB_USERNAME="techjobs" -DDB_PASSWORD="tech" -DSERVER_PORT="8080" -jar path/to/build/artifacts/java-techjobs-persistent-artifacts.jar 
 ```
 {{% notice warning %}}
-You will need to replace the `-DRDS_ENDPOINT="ipv4-address"` with the public `ipv4-address` of your `EC2`!
-
-You will also need to specify the path to the `.jar` file within your `EC2` instance.
+You will need to specify the path to the `.jar` file within your `EC2` instance.
 {{% /notice %}}
 
 #### Configure Web Server
@@ -169,6 +173,8 @@ sudo caddy reload --config /etc/caddy/Caddyfile
 
 {{% expand "Script Solution" %}}
 ```bash
+#!/bin/bash
+
 public_ipv4_address=$(curl http://169.254.169.254/latest/meta-data/public-ipv4) 
 export public_ipv4_address
 
@@ -204,7 +210,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
  
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null 
  
-sudo apt update 
+sudo apt update -y
  
 apt-cache policy docker-ce 
  
