@@ -11,71 +11,67 @@ Now you are ready to deploy a static website to a brand new EC2 instance. Let's 
 
 ### EC2 Settings
 
-- `Name`: "first-static-website"
-- `Machine Image`: "Ubuntu 22.04 LTS"
-- `Instance Type`: "t2.micro"
-- `Key Pair`: "first-key-pair"
-- `Security Group`: "Create Security Group"
-	- Allow SSH Traffic from Anywhere
-	- Allow HTTPs traffic from the internet
-	- Allow HTTP Traffic from the internet
-- `Storage`: Default
-
+1. Name: "first-static-website"
+1. Machine Image: "Ubuntu 22.04 LTS"
+1. Instance Type: "t2.micro"
+1. Key Pair: "first-key-pair"
+1. Security Group: "Create Security Group"
+	1. Allow SSH Traffic from Anywhere
+	1. Allow HTTPs traffic from the internet
+	1. Allow HTTP Traffic from the internet
+1. Storage: Default
 
 Once you have all of the above options selected you are ready to launch your EC2 instance.
 
 ### Validation
 
-Click the `Launch Instance` button.
+Click the *Launch Instance* button.
 
 ![first-static-website on ec2 dashboard](pictures/first-static-website.png?classes=border)
 
-Click on the `Instance ID` to view the summary page for the new EC2 instance.
+Click on the *Instance ID* to view the summary page for the new EC2 instance.
 
 ![first-static-website summary](pictures/first-static-website-summary.png?classes=border)
-
 
 ### Connect to the Instance
 
 ![connect-to-instance-image](pictures/first-static-website-summary.png?classes=border)
 
-Click on the `Connect` button.
+Click on the *Connect* button.
 
 ### EC2 Instance Connect
 
 ![ec2-instance-connect-view](pictures/ec2-instance-connect.png?classes=border)
 
-Within the `EC2 Instance Connect` click on the `Connect` button.
+Within the *EC2 Instance Connect* menu, click on the *Connect* button.
 
-{{% notice note %}}
+{{% notice blue "Note" "rocket" %}}
 The `Instance ID` and the `Public IP Address` will have different values for you.
 {{% /notice %}}
+
+Now the terminal will launch and you can begin your work!
 
 ![ec2 instance connect terminal emulator](pictures/ec2-instance-connect-terminal-emulator.png?classes=border)
 
 ### Getting Organized
 
-The objective for this walkthrough is to deploy a static `React` application to an `EC2 instance`. Below you will find a list of items needed in order to accomplish this task:
-1. `Build artificats of the React project`
+The objective for this walkthrough is to deploy a static React application to an EC2 instance. Below you will find a list of items needed in order to accomplish this task:
 
-{{% notice note %}}
-The build artifacts for the react project are located within this github repository: `https://github.com/LaunchCodeTechnicalTraining/react-tic-tac-toe-build-artifacts.git`
-{{% /notice %}}
-
-2. `Web Server to deploy application`: This walkthrough will utilize `Caddy` as the web server.
+1. Build artifacts of the React project. The build artifacts for the react project are located within this [Github repository](https://github.com/LaunchCodeTechnicalTraining/react-tic-tac-toe-build-artifacts.git).
+1. Web Server to deploy application. This walkthrough will utilize Caddy as the web server.
 
 
 ### Clone the Build Artifacts
 
 Run the following command:
 
-![react-tic-tac-toe build artifacts](pictures/react-build-artifacts.png?classes=border)
-
 ```bash
 git clone https://github.com/LaunchCodeTechnicalTraining/react-tic-tac-toe-build-artifacts.git
 ```
 
 ### Caddy Installation
+
+To install Caddy, run the following bash commands in the order they are presented in this text.
 
 ```bash
 sudo apt update -y
@@ -95,11 +91,11 @@ sudo apt install caddy -y
 
 To verify that you have installed caddy run the following command:
 
-![verify caddy installation](pictures/which-caddy.png?classes=border)
-
 ```bash
 which caddy
 ```
+
+The output of this command should something similar to `/usr/bin/caddy`.
 
 ### Standing up Static React Website
 
@@ -111,11 +107,11 @@ The default Caddyfile is located in the following location: `/etc/caddy/Caddfile
 
 You will need to edit the file as a sudo user and add the following content:
 
-{{% notice note %}}
+{{% notice blue "Note" "rocket" %}}
 This walkthrough will be using Vim to edit files. If you are unfamiliar with Vim you can learn more in our Linux Curriculum located here: `https://launchcodetechnicaltraining.org/linux/userspace-applications/walkthrough/vim/`.
 {{% /notice %}}
 
-{{% notice "green" Bonus %}}
+{{% notice blue "Note" "rocket" %}}
 The default Caddyfile will already have text inside. You should see the file with the following information:
 ![default caddyfile text](pictures/default-caddyfile-view.png?classes=border)
 Feel free to remove all of the information inside of this file. It is simply there as an example.
@@ -129,7 +125,7 @@ sudo vim /etc/caddy/Caddyfile
 
 ![caddy config file ](pictures/caddy-config-file.png?classes=border)
 
-{{% notice note %}}
+{{% notice blue "Note" "rocket" %}}
 In the above image you will need to replace the ip address `184.72.82.98` with your EC2 Instances IPV4 Public IP Address. The above address is specific to the machine used for this walkthrough.
 {{% /notice %}}
 
@@ -176,7 +172,7 @@ Within your `/etc/caddy/` directory:
 ```bash
 sudo caddy reload
 ```
-{{% notice "green" bonus %}}
+{{% notice blue "Note" "rocket" %}}
 I have found that caddy is started and managed automatically by systemctl and if your project directory is in a location with incorrect permissions this can cause issues. Once you run all the commands as the same user it usually fixes the issues of caddy being able to access the project direcrory.
 {{% /notice %}}
 
