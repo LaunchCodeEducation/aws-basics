@@ -6,14 +6,14 @@ weight: 105
 ---
 
 The following walkthrough content for the `AWS EC2` service will take you through these steps:
-- Creating your first `AWS EC2` Instance
-    - Accessing / Connecting to the Instance
-- Deploying `Static Websites`
-    - React
-    - Angular
-- Deploying `MVC Applications` using a Reverse Proxy.
-    - Java/Spring
-    - C#/ASP.NET
+1. Creating your first `AWS EC2` Instance
+    1. Accessing and Connecting to the Instance
+1. Deploying `Static Websites`
+    1. React
+    1. Angular
+1. Deploying `MVC Applications` using a Reverse Proxy.
+    1. Java/Spring
+    1. C#/ASP.NET
 
 ## Content Links
 

@@ -95,11 +95,11 @@ sudo apt install caddy -y
 
 To verify that you have installed caddy run the following command:
 
-![verify caddy installation](pictures/which-caddy.png?classes=border)
-
 ```bash
 which caddy
 ```
+
+![verify caddy installation](pictures/which-caddy.png?classes=border)
 
 ### Standing up Static Angular Website
 
@@ -110,11 +110,11 @@ The default Caddyfile is located in the following location: `/etc/caddy/Caddfile
 #### Editing the Caddy Config File
 
 
-{{% notice note %}}
+{{% notice blue "Note" "rocket" %}}
 This walkthrough will be using Vim to edit files. If you are unfamiliar with Vim you can learn more in our Linux Curriculum located here: `https://launchcodetechnicaltraining.org/linux/userspace-applications/walkthrough/vim/`.
 {{% /notice %}}
 
-{{% notice "green" Bonus %}}
+{{% notice blue "Note" "rocket" %}}
 The default Caddyfile will already have text inside. You should see the file with the following information:
 ![default caddyfile text](pictures/default-caddyfile-view.png?classes=border)
 Feel free to remove all of the information inside of this file. It is simply there as an example.
@@ -128,7 +128,7 @@ sudo vim /etc/caddy/Caddyfile
 
 ![caddy config file for angular static website ](pictures/caddy-config-file-angular.png?classes=border)
 
-{{% notice note %}}
+{{% notice blue "Note" "rocket" %}}
 In the above image you will need to replace the ip address `18.206.162.35` with your EC2 Instances IPV4 Public IP Address. The above address is specific to the machine used for this walkthrough.
 {{% /notice %}}
 
@@ -175,7 +175,7 @@ Within your `/etc/caddy/` directory:
 ```bash
 sudo caddy reload
 ```
-{{% notice "green" bonus %}}
+{{% notice blue "Note" "rocket" %}}
 I have found that caddy is started and managed automatically by systemctl and if your project directory is in a location with incorrect permissions this can cause issues. Once you run all the commands as the same user it usually fixes the issues of caddy being able to access the project direcrory.
 {{% /notice %}}
 

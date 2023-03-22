@@ -36,7 +36,7 @@ The artifacts are already built, they just need to be installed onto the virtual
 
 1. use `git` to clone the build artifacts
 
-{{% notice note %}}
+{{% notice blue "Note" "rocket" %}}
 Build artifacts for this deployment:
 `https://github.com/LaunchCodeTechnicalTraining/java-artifacts-persistent-aws`
 {{% /notice %}}
@@ -58,7 +58,7 @@ sudo apt install openjdk-11-jre -y
 #### Web Server
 `caddy`, `nginx`, or some other web server must be installed to catch `HTTP` requests and respond as a `reverse_proxy` to our running application.
 
-{{% notice "green" Bonus %}}
+{{% notice blue "Note" "rocket" %}}
 You can find Installation steps and further information for both `caddy` and `nginx` here:
 - [Caddy Installation](https://launchcodetechnicaltraining.org/linux/web-server/caddy/setup/)
 - [Nginx Installation](https://launchcodetechnicaltraining.org/linux/web-server/nginx/setup/)
@@ -71,7 +71,7 @@ In order to keep everything inside of our virtual-server you will be utilizing `
 
 This allows us to create a `MySQL` container inside of our virtual-server and configure it's settings so that our `Java` application is able to connect to it.
 
-{{% notice note %}}
+{{% notice blue "Note" "rocket" %}}
 docker is an extremely useful tool and can be utilized in many different ways. To cover its entire purpose and numerous use cases is outside of the scope of this class. 
 
 If you would like to continue reading and learn more about `docker` you can find the documentation here:
@@ -143,7 +143,7 @@ Breakdown of command:
 1. `-e MYSQL_ROOT_PASSWORD="admin" -e MYSQL_USER="techjobs"`: Environment variables with values
 1. `-d mysql`: targeting `MySQL` docker image
 
-{{% notice "green" Bonus %}}
+{{% notice blue "Note" "rocket" %}}
 If you would like to read the documentation for the `MySQL` `docker` image you can find the information here:
 
 [Docker MySQL Image Docs](https://hub.docker.com/_/mysql)
@@ -168,7 +168,7 @@ Run the following command to boot your `Java-Spring` project and connect to the 
 ```bash
 java -DRDS_ENDPOINT="127.0.0.1" -DDB_PORT="3306" -DDB_NAME="techjobs" -DDB_USERNAME="techjobs" -DDB_PASSWORD="tech" -DSERVER_PORT="8080" -jar path/to/build/artifacts/java-techjobs-persistent-artifacts.jar 
 ```
-{{% notice warning %}}
+{{% notice orange "Warning" "rocket" %}}
 You will need to specify the path to the `.jar` file within your `EC2` instance.
 {{% /notice %}}
 
@@ -178,7 +178,7 @@ This walkthrough will utilize `caddy` for the web server.
 
 You will need to edit the default `caddy` file. This walkthrough utilizes `vim` to edit the file.
 
-{{% notice green "Bonus" %}}
+{{% notice blue "Note" "rocket" %}}
 If you need a refresher on `vim` or are unfamiliar with the tool you can find useful information here:
 
 [Vim Walkthrough / Introduction](https://launchcodetechnicaltraining.org/linux/userspace-applications/walkthrough/vim/)

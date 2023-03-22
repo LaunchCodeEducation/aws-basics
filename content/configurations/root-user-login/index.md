@@ -5,8 +5,6 @@ draft: false
 weight: 105
 ---
 
-## Root User Login
-
 To log in to the AWS account you will need to provide the root user email address and password you created earlier in this walkthrough.
 
 ![AWS Account Login Prompt](pictures/login-prompt.png?classes=border)
